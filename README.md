@@ -7,7 +7,6 @@ A single-page informational site covering events, news & how to get in touch.
 
 **Live site:** [i-ug.co.uk](https://i-ug.org.uk)
 
-
 ## Tech stack
 
 - **Static, one-page site** — no database, no server-side code, no CMS
