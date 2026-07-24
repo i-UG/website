@@ -1,8 +1,12 @@
 # UK IBM i User Group Website
 
-The official website for the UK IBM i User Group — a single-page informational site covering events, news, and how to get in touch.
+![i-UG Website](/assets/logo/logo-white.png)
 
-**Live site:** _add your Azure Static Web Apps URL / custom domain here_
+The official website for the UK IBM i User Group.<br><br>
+A single-page informational site covering events, news & how to get in touch.
+
+**Live site:** [i-ug.co.uk](https://i-ug.org.uk)
+
 
 ## Tech stack
 
@@ -17,9 +21,10 @@ The official website for the UK IBM i User Group — a single-page informational
 
 ```text
 ├── index.html          # The single page — all content lives here
-├── /assets             # Images, icons, etc.
-├── /css                # Tailwind stylesheets
-└── README.md
+├── /assets/css         # Tailwind stylesheets
+├── /assets/images      # Images
+├── /assets/logo        # Images
+└── README.md           # this bumph
 ```
 
 ## How changes get published
@@ -32,7 +37,7 @@ Nobody edits the live site directly. Every change goes through a review step:
 4. Once approved, the Director **merges** the pull request. This is the only step that can publish a change — only the Development Director can merge into `main`.
 5. Azure automatically rebuilds and republishes the site, usually within a minute or two. No manual deployment step is ever needed.
 
-See the **Website Update Guide** (shared with the committee) for the full walkthrough.
+See the **Website Update Guide** [Found here](./public/docs/Website-Update-Guide.pdf), for the full walkthrough.
 
 ## Contributing (Committee members)
 
@@ -54,9 +59,13 @@ npx serve .
 
 ## Branch protection
 
-- `main` is protected: no direct pushes, pull requests required, and only the Development Director can approve and merge.
+- `main` is protected: no direct pushes, pull requests required & only the Development Director can approve and merge.
 - Committee members have **Write** access, which allows branches and pull requests but not direct merges to `main`.
 
 ## Maintainer
 
-**Development Director:** @AndyYouens
+**Development Director:**   [![GitHub: AndyYouens](https://img.shields.io/badge/GitHub-AndyYouens-blue?logo=github)](https://github.com/AndyYouens)
+
+## License
+
+This project is licensed under a proprietary license. All rights reserved by FormaServe Systems Ltd. Unauthorized copying, distribution, or modification of this code is strictly prohibited without prior written consent from FormaServe Systems Ltd.
