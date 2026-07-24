@@ -1,6 +1,6 @@
 # UK IBM i User Group Website
 
-![i-UG Website](/assets/logo/logo-white.png)
+![i-UG Website](/assets/logo/logo.png)
 
 The official website for the UK IBM i User Group.<br><br>
 A single-page informational site covering events, news & how to get in touch.
