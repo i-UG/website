@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i-UG - The UK IBM i User Group</title>
+    <meta name="description"
+        content="i-UG connects and supports the IBM i community across the United Kingdom through conferences, workshops, and networking." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./tailwind.css" />
+    <style>
+        body {
+            font-family: "IBM Plex Sans", system-ui, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="site-header"
+        class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/0 transition-all duration-300">
+        <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 lg:px-8">
+            <a href="#" class="flex items-center gap-3" aria-label="i-UG home">
+                <img src="./public/logo.png" alt="i-UG logo" class="h-10 w-10" />
+                <span class="hidden text-sm font-medium text-ibm-carbon-light sm:inline">
+                    The UK IBM i User Group
+                </span>
+            </a>
+
+            <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+                <a href="#about"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">About</a>
+                <a href="#conference"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Conference</a>
+                <a href="#gallery"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Gallery</a>
+                <a href="#members"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Members</a>
+                <a href="#contact"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
+                <a href="#contact"
+                    class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                    Join the Community
+                </a>
+            </nav>
+
+            <button id="mobile-toggle" type="button"
+                class="inline-flex h-10 w-10 items-center justify-center text-ibm-carbon md:hidden"
+                aria-label="Toggle menu" aria-expanded="false">
+                <span class="relative block h-4 w-5">
+                    <span id="line-1"
+                        class="absolute left-0 top-0 h-0.5 w-5 bg-current transition-transform duration-300"></span>
+                    <span id="line-2"
+                        class="absolute left-0 top-[7px] h-0.5 w-5 bg-current transition-opacity duration-300"></span>
+                    <span id="line-3"
+                        class="absolute left-0 top-[14px] h-0.5 w-5 bg-current transition-transform duration-300"></span>
+                </span>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="max-h-0 overflow-hidden border-t-0 border-gray-200 bg-white transition-all duration-300 md:hidden">
+            <div class="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-4 lg:px-8">
+                <a href="#about"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">About</a>
+                <a href="#conference"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Conference</a>
+                <a href="#gallery"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Gallery</a>
+                <a href="#members"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Members</a>
+                <a href="#contact"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
+                <a href="#contact"
+                    class="mobile-link mt-2 inline-flex w-full items-center justify-center rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                    Join the Community
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative overflow-hidden border-b border-gray-200 bg-white">
+            <div class="ibm-grid absolute inset-0" aria-hidden="true"></div>
+            <div class="ibm-diagonal absolute inset-0" aria-hidden="true"></div>
+            <div class="absolute left-0 top-0 h-full w-1.5 bg-ibm-blue" aria-hidden="true"></div>
+
+            <div class="relative mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <div class="flex flex-col justify-center py-28 sm:py-36">
+                    <img src="./public/logo.png" alt="i-UG logo"
+                        class="mb-8 h-20 w-20 animate-fade-in sm:h-24 sm:w-24" />
+
+                    <p
+                        class="mb-5 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue animate-fade-in">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        The UK IBM i User Group
+                    </p>
+
+                    <h1
+                        class="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight text-ibm-carbon animate-fade-up sm:text-5xl lg:text-6xl">
+                        i-UG - The UK IBM i User Group
+                    </h1>
+
+                    <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ibm-carbon-light animate-fade-up">
+                        Connecting and supporting the IBM i community across the United Kingdom.
+                    </p>
+
+                    <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up">
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                            Join the Community
+                        </a>
+                        <a href="#about"
+                            class="inline-flex items-center justify-center gap-2 rounded-md border border-ibm-carbon bg-transparent px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-carbon transition-all duration-200 hover:bg-ibm-carbon hover:text-white">
+                            Learn more
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white px-4 py-10">
+            <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
+                <div class="break-inside-avoid"><img src="./public/images/photo1.jpeg" alt="Photo 1"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo2.jpeg" alt="Photo 2"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo3.jpeg" alt="Photo 3"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo4.jpeg" alt="Photo 4"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo5.jpeg" alt="Photo 5"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo6.jpeg" alt="Photo 6"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo7.jpeg" alt="Photo 7"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo8.jpeg" alt="Photo 8"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid"><img src="./public/images/photo9.jpeg" alt="Photo 9"
+                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-white py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <header class="mb-12 animate-fade-up">
+                    <p
+                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        About i-UG
+                    </p>
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                        A community built for IBM i in the UK
+                    </h2>
+                </header>
+
+                <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+                    <div class="animate-slide-in border-l-2 border-ibm-blue pl-6">
+                        <p class="text-base leading-relaxed text-ibm-carbon-light">
+                            i-UG is the United Kingdom&apos;s independent user group for the IBM i platform. We bring
+                            together developers, systems architects, CIOs and the businesses that rely on IBM i to share
+                            knowledge, shape best practice and strengthen the platform&apos;s future.
+                        </p>
+                        <p class="mt-5 text-base leading-relaxed text-ibm-carbon-light">
+                            Through conferences, regional meet-ups, technical workshops and an active online network, we
+                            help members stay current with modernisation, security, RPG, Db2 for i and the wider IBM
+                            Power ecosystem.
+                        </p>
+                    </div>
+
+                    <div class="animate-slide-in border-l-2 border-gray-200 pl-6">
+                        <h3 class="text-lg font-semibold text-ibm-carbon">Our mission</h3>
+                        <p class="mt-3 text-base leading-relaxed text-ibm-carbon-light">
+                            To connect, educate and advocate for the UK IBM i community, ensuring organisations get the
+                            most from their investment in the platform and that skills continue to thrive across
+                            generations of professionals.
+                        </p>
+
+                        <dl class="mt-8 grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
+                            <div>
+                                <dt class="text-2xl font-semibold text-ibm-blue">UK-wide</dt>
+                                <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Regional reach
+                                </dd>
+                            </div>
+                            <div>
+                                <dt class="text-2xl font-semibold text-ibm-blue">Vendor-neutral</dt>
+                                <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Independent</dd>
+                            </div>
+                            <div>
+                                <dt class="text-2xl font-semibold text-ibm-blue">Year-round</dt>
+                                <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Events and
+                                    learning</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="conference" class="bg-white py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <div class="relative overflow-hidden bg-ibm-blue text-white shadow-sm">
+                    <div class="ibm-diagonal absolute inset-0 opacity-50" aria-hidden="true"></div>
+
+                    <div class="relative grid grid-cols-1 gap-10 p-10 sm:p-14 lg:grid-cols-5 lg:gap-12">
+                        <div class="lg:col-span-3">
+                            <p
+                                class="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-white/80">
+                                <span class="h-px w-8 bg-white/80" aria-hidden="true"></span>
+                                Next Conference
+                            </p>
+
+                            <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
+                                i-UG Conference Midlands 2026
+                            </h2>
+
+                            <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/90">
+                                A full day of IBM i sessions covering modernisation, security, RPG, Db2 for i and the
+                                Power roadmap, plus hands-on workshops and community networking.
+                            </p>
+
+                            <ul class="mt-8 space-y-3">
+                                <li class="flex items-start gap-3 text-sm text-white/90"><span
+                                        class="mt-1.5 h-1.5 w-1.5 flex-none bg-white" aria-hidden="true"></span>Keynotes
+                                    from IBM and industry leaders</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90"><span
+                                        class="mt-1.5 h-1.5 w-1.5 flex-none bg-white"
+                                        aria-hidden="true"></span>Technical breakout tracks for developers and
+                                    architects</li>
+                                <li class="flex items-start gap-3 text-sm text-white/90"><span
+                                        class="mt-1.5 h-1.5 w-1.5 flex-none bg-white"
+                                        aria-hidden="true"></span>Networking with the UK IBM i community</li>
+                            </ul>
+                        </div>
+
+                        <div
+                            class="flex flex-col justify-center gap-6 border-white/20 lg:col-span-2 lg:border-l lg:pl-12">
+                            <dl class="space-y-5">
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-white/70">Date</dt>
+                                    <dd class="mt-1 text-lg font-medium">Tuesday 3rd November 2026</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-white/70">Location
+                                    </dt>
+                                    <dd class="mt-1 text-lg font-medium">The Mount Hotel, Wolverhampton, England</dd>
+                                </div>
+                            </dl>
+
+                            <button type="button"
+                                class="inline-flex w-full items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-blue transition-all duration-200 hover:bg-gray-100">
+                                Register here
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- 
+        <section id="members" class="bg-ibm-gray py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <header class="mb-12 animate-fade-up">
+                    <p
+                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        Member Lookup
+                    </p>
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                        Find your i-UG membership details
+                    </h2>
+                </header>
+
+                <div class="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
+                    <div class="lg:col-span-2">
+                        <div class="border-l-2 border-ibm-blue pl-6">
+                            <p class="mb-6 text-base leading-relaxed text-ibm-carbon-light">
+                                Enter your i-UG membership number or the email address registered to your account to
+                                view your membership details.
+                            </p>
+
+                            <form id="member-form" noValidate class="flex flex-col gap-4">
+                                <div class="flex flex-col gap-2">
+                                    <label for="member-query"
+                                        class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Membership
+                                        number or email</label>
+                                    <input id="member-query" name="query" type="text"
+                                        placeholder="IUG-2026-00482 or you@company.co.uk"
+                                        class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                    <p id="member-error" class="hidden text-xs font-medium text-red-600" role="alert">
+                                    </p>
+                                </div>
+                                <div>
+                                    <button id="member-submit" type="submit"
+                                        class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3">
+                        <div id="member-placeholder"
+                            class="flex min-h-44 h-full items-center justify-center border border-dashed border-gray-300 bg-white p-8 text-center">
+                            <p class="text-sm text-ibm-carbon-light">Your membership details will appear here after you
+                                submit.</p>
+                        </div>
+
+                        <div id="member-result"
+                            class="hidden animate-fade-up border border-gray-200 bg-white p-8 shadow-sm">
+                            <div class="mb-6 flex items-center justify-between border-b border-gray-200 pb-4">
+                                <div>
+                                    <h3 class="text-xl font-semibold text-ibm-carbon">Alex Morgan</h3>
+                                    <p class="mt-1 text-sm text-ibm-carbon-light">IUG-2026-00482</p>
+                                </div>
+                                <span
+                                    class="inline-flex items-center gap-2 rounded-md bg-ibm-blue/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-ibm-blue">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-ibm-blue" aria-hidden="true"></span>
+                                    Active
+                                </span>
+                            </div>
+
+                            <dl class="grid grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2">
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                        Email</dt>
+                                    <dd class="mt-1 text-sm text-ibm-carbon">alex.morgan@example.co.uk</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                        Membership type</dt>
+                                    <dd class="mt-1 text-sm text-ibm-carbon">Professional</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                        Region</dt>
+                                    <dd class="mt-1 text-sm text-ibm-carbon">Midlands</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                        Member since</dt>
+                                    <dd class="mt-1 text-sm text-ibm-carbon">14 March 2021</dd>
+                                </div>
+                                <div>
+                                    <dt class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                        Renewal due</dt>
+                                    <dd class="mt-1 text-sm text-ibm-carbon">31 December 2026</dd>
+                                </div>
+                            </dl>
+
+                            <p class="mt-6 border-t border-gray-200 pt-4 text-xs text-ibm-carbon-light">
+                                Showing sample data. Live membership records will be available here soon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section aria-label="Sponsors and partners" class="border-y border-gray-200 bg-ibm-gray">
+            <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8">
+                <p
+                    class="mb-8 flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
+                    <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                    Supported by our partners and sponsors
+                    <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                </p>
+
+                <ul class="grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        IBM</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Arcad</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        MKT Computers</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Fresche Solutions</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Proximity</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Service Express</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        PowerWire</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Rowton IT</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Celerity</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Shield</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        Meridian IT</li>
+                    <li
+                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
+                        FalconStor</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="gallery" class="bg-ibm-gray py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <header class="mb-12 animate-fade-up">
+                    <p
+                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        Event Gallery
+                    </p>
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                        Moments from across the community
+                    </h2>
+                </header>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <figure
+                        class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="./public/gallery/event-keynote.jpeg"
+                                alt="Speaker delivering a keynote at an i-UG conference"
+                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                        </div>
+                        <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <span class="text-sm font-medium text-ibm-carbon">Annual Conference - Keynote</span>
+                            <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure
+                        class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="./public/gallery/event-networking.jpeg"
+                                alt="Members networking at an i-UG community event"
+                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                        </div>
+                        <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <span class="text-sm font-medium text-ibm-carbon">Community Networking</span>
+                            <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure
+                        class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="./public/gallery/event-workshop.jpeg"
+                                alt="Developers collaborating in an IBM i technical workshop"
+                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                        </div>
+                        <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <span class="text-sm font-medium text-ibm-carbon">Technical Workshop</span>
+                            <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-white py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                <header class="mb-12 animate-fade-up">
+                    <p
+                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        Contact Us
+                    </p>
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                        Get in touch with i-UG
+                    </h2>
+                </header>
+
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
+                    <div class="lg:col-span-2">
+                        <div class="border-l-2 border-ibm-blue pl-6">
+                            <p class="text-base leading-relaxed text-ibm-carbon-light">
+                                Whether you want to join the community, speak at an event, or partner with us, we would
+                                love to hear from you. Complete the form and a member of the i-UG team will be in touch.
+                            </p>
+                            <ul class="mt-8 space-y-4 text-sm text-ibm-carbon-light">
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>Membership and community enquiries</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>Speaking and event opportunities</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>Partnership and sponsorship</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-3">
+                        <form id="contact-form" noValidate
+                            class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
+                            <div class="grid grid-cols-1 gap-6">
+                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                    <div class="flex flex-col gap-2">
+                                        <label for="contact-name"
+                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
+                                        <input id="contact-name" name="name" type="text" placeholder="Jane Smith"
+                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <p id="error-name" class="hidden text-xs font-medium text-red-600"></p>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <label for="contact-email"
+                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Email</label>
+                                        <input id="contact-email" name="email" type="email"
+                                            placeholder="jane@company.co.uk"
+                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <p id="error-email" class="hidden text-xs font-medium text-red-600"></p>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col gap-2">
+                                    <label for="contact-message"
+                                        class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Message</label>
+                                    <textarea id="contact-message" name="message" rows="5"
+                                        placeholder="Tell us how you'd like to get involved with i-UG..."
+                                        class="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue"></textarea>
+                                    <p id="error-message" class="hidden text-xs font-medium text-red-600"></p>
+                                </div>
+
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <button id="contact-submit" type="submit"
+                                        class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                                        Send message
+                                    </button>
+                                    <p id="contact-status" class="hidden text-sm font-medium" role="status"></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-ibm-carbon text-gray-300">
+        <div
+            class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 lg:px-8 sm:flex-row sm:items-center">
+            <div class="flex items-center gap-3">
+                <img src="./public/logo-white.png" alt="i-UG logo" class="h-9 w-9" />
+                <p class="text-sm">&copy; FormaServe Systems 2026</p>
+            </div>
+
+            <nav aria-label="Social links">
+                <ul class="flex flex-wrap gap-6">
+                    <li><a href="#" class="text-sm text-gray-400 transition-colors hover:text-white">LinkedIn</a></li>
+                    <li><a href="#" class="text-sm text-gray-400 transition-colors hover:text-white">X / Twitter</a>
+                    </li>
+                    <li><a href="#" class="text-sm text-gray-400 transition-colors hover:text-white">YouTube</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById("site-header");
+        const toggleButton = document.getElementById("mobile-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const line1 = document.getElementById("line-1");
+        const line2 = document.getElementById("line-2");
+        const line3 = document.getElementById("line-3");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
+        let menuOpen = false;
+
+        function applyHeaderState() {
+            if (window.scrollY > 8) {
+                header.classList.add("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur");
+                header.classList.remove("border-transparent", "bg-white/0");
+            } else {
+                header.classList.add("border-transparent", "bg-white/0");
+                header.classList.remove("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur");
+            }
+        }
+
+        function setMenuState(open) {
+            menuOpen = open;
+            toggleButton.setAttribute("aria-expanded", String(open));
+
+            if (open) {
+                mobileMenu.classList.add("max-h-80", "border-t");
+                mobileMenu.classList.remove("max-h-0", "border-t-0");
+                line1.classList.add("translate-y-[7px]", "rotate-45");
+                line2.classList.add("opacity-0");
+                line2.classList.remove("opacity-100");
+                line3.classList.add("-translate-y-[7px]", "-rotate-45");
+            } else {
+                mobileMenu.classList.add("max-h-0", "border-t-0");
+                mobileMenu.classList.remove("max-h-80", "border-t");
+                line1.classList.remove("translate-y-[7px]", "rotate-45");
+                line2.classList.remove("opacity-0");
+                line2.classList.add("opacity-100");
+                line3.classList.remove("-translate-y-[7px]", "-rotate-45");
+            }
+        }
+
+        window.addEventListener("scroll", applyHeaderState, { passive: true });
+        applyHeaderState();
+        setMenuState(false);
+
+        toggleButton.addEventListener("click", () => setMenuState(!menuOpen));
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => setMenuState(false));
+        });
+
+        const memberForm = document.getElementById("member-form");
+        const memberQuery = document.getElementById("member-query");
+        const memberError = document.getElementById("member-error");
+        const memberSubmit = document.getElementById("member-submit");
+        const memberPlaceholder = document.getElementById("member-placeholder");
+        const memberResult = document.getElementById("member-result");
+
+        memberForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const value = memberQuery.value.trim();
+
+            if (!value) {
+                memberError.textContent = "Please enter your membership number or email address.";
+                memberError.classList.remove("hidden");
+                return;
+            }
+
+            memberError.classList.add("hidden");
+            memberSubmit.textContent = "Looking up...";
+            memberSubmit.disabled = true;
+
+            setTimeout(() => {
+                memberPlaceholder.classList.add("hidden");
+                memberResult.classList.remove("hidden");
+                memberSubmit.textContent = "Submit";
+                memberSubmit.disabled = false;
+            }, 400);
+        });
+
+        const contactForm = document.getElementById("contact-form");
+        const contactStatus = document.getElementById("contact-status");
+        const errorName = document.getElementById("error-name");
+        const errorEmail = document.getElementById("error-email");
+        const errorMessage = document.getElementById("error-message");
+        const submitButton = document.getElementById("contact-submit");
+
+        function showFieldError(element, message) {
+            if (!message) {
+                element.classList.add("hidden");
+                element.textContent = "";
+                return;
+            }
+            element.textContent = message;
+            element.classList.remove("hidden");
+        }
+
+        function validEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("contact-name").value.trim();
+            const email = document.getElementById("contact-email").value.trim();
+            const message = document.getElementById("contact-message").value.trim();
+
+            const nameError = name ? "" : "Please enter your name.";
+            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
+            const messageError = message.length >= 10 ? "" : "Please enter at least 10 characters.";
+
+            showFieldError(errorName, nameError);
+            showFieldError(errorEmail, emailError);
+            showFieldError(errorMessage, messageError);
+
+            if (nameError || emailError || messageError) {
+                contactStatus.classList.add("hidden");
+                return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+            setTimeout(() => {
+                contactForm.reset();
+                submitButton.disabled = false;
+                submitButton.textContent = "Send message";
+                contactStatus.textContent = "Thank you - your message has been received.";
+                contactStatus.className = "text-sm font-medium text-ibm-blue";
+                contactStatus.classList.remove("hidden");
+            }, 450);
+        });
+    </script>
+</body>
+
+</html>
