@@ -552,7 +552,7 @@
                 <p
                     class="mb-8 flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
-                    Supported by our partners and sponsors
+                    Supported by our partners &amp; sponsors
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                 </p>
 
@@ -853,8 +853,8 @@
             <div class="flex items-center gap-3">
                 <!-- White version of the logo for use on the dark footer background -->
                 <img src="./assets/logo/logo-white.png" alt="i-UG logo" class="h-9 w-9" />
-                <!-- *** UPDATE THIS: copyright year and organisation name *** -->
-                <p class="text-sm">&copy; FormaServe Systems 2026</p>
+                <!-- *** Copyright year and organisation name *** -->
+                <p class="text-sm">Built by &copy; FormaServe Systems 2026</p>
             </div>
 
             <!-- Social media links -->
@@ -974,46 +974,7 @@
             link.addEventListener("click", () => setMenuState(false));
         });
 
-        // ── 2. MEMBER LOOKUP FORM ─────────────────────────────────────
-        // These variables reference the member lookup form elements.
-        // NOTE: the form HTML for this section has been removed from the
-        // page, so these getElementById calls will return null and the
-        // event listener below will silently fail. This block can be
-        // removed if the members section is not being restored.
-        const memberForm = document.getElementById("member-form");
-        const memberQuery = document.getElementById("member-query");
-        const memberError = document.getElementById("member-error");
-        const memberSubmit = document.getElementById("member-submit");
-        const memberPlaceholder = document.getElementById("member-placeholder");
-        const memberResult = document.getElementById("member-result");
-
-        memberForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-            const value = memberQuery.value.trim();
-
-            // Show an error if the field is empty.
-            if (!value) {
-                memberError.textContent = "Please enter your membership number or email address.";
-                memberError.classList.remove("hidden");
-                return;
-            }
-
-            // Hide any previous error and show a loading state.
-            memberError.classList.add("hidden");
-            memberSubmit.textContent = "Looking up...";
-            memberSubmit.disabled = true;
-
-            // Simulate a lookup delay (400ms), then show the result placeholder.
-            // Replace this setTimeout with a real fetch() call to an API if needed.
-            setTimeout(() => {
-                memberPlaceholder.classList.add("hidden");
-                memberResult.classList.remove("hidden");
-                memberSubmit.textContent = "Submit";
-                memberSubmit.disabled = false;
-            }, 400);
-        });
-
-        // ── 3. CONTACT FORM VALIDATION ────────────────────────────────
+        // ── 2. CONTACT FORM VALIDATION ────────────────────────────────
         // Grab references to the contact form and its fields.
         const contactForm = document.getElementById("contact-form");
         const contactStatus = document.getElementById("contact-status");
