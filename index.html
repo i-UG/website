@@ -1,15 +1,95 @@
 <!doctype html>
+<!--
+    ============================================================
+    i-UG Website — index.html
+    ============================================================
+    This is the ONLY HTML file for the entire website.
+    Everything visible on the site lives here — do not create
+    additional .html pages.
+
+    TECH STACK
+    ----------
+    - HTML5  : The markup you see in this file
+    - Tailwind CSS : A utility-first CSS framework.
+      Styles are applied via class names directly on HTML
+      elements (e.g. class="text-lg font-bold text-blue-600").
+      The compiled stylesheet lives at: assets/css/tailwind.css
+    - Vanilla JavaScript (no frameworks) — see the <script>
+      block at the bottom of this file.
+    - Hosted on Azure Static Web Apps, auto-deployed from GitHub.
+
+    HOW TO EDIT CONTENT
+    -------------------
+    - Text  : Find the text you want to change and edit it directly.
+    - Images: Swap the src="..." path to point to your new image
+              stored in assets/images/.
+    - Links : Change the href="..." value.
+    - Dates/locations for the conference: search for the section
+      with id="conference" below.
+    - Sponsor/partner names: search for the section with
+      aria-label="Sponsors and partners" below.
+    - Social media links: find the <footer> at the bottom.
+
+    COLOUR VARIABLES (defined in tailwind.css)
+    ------------------------------------------
+    text-ibm-blue        → IBM Blue (primary brand colour)
+    bg-ibm-blue          → IBM Blue background
+    text-ibm-carbon      → Dark text colour
+    text-ibm-carbon-light→ Slightly lighter dark text
+    bg-ibm-gray          → Light grey section background
+    bg-ibm-carbon        → Very dark background (used in footer)
+
+    PAGE SECTIONS (in order)
+    ------------------------
+    1. <head>         — Meta, fonts, stylesheet
+    2. <header>       — Sticky navigation bar + mobile menu
+    3. Hero section   — Big intro banner (no id, first <section>)
+    4. Photo strip    — Horizontal masonry of photos (no id)
+    5. #about         — About i-UG section
+    6. #conference    — Next conference details
+    7. Sponsors       — Partner/sponsor logos strip
+    8. #gallery       — Featured event photos
+    9. #contact       — Contact form
+    10. <footer>      — Copyright + social links
+    11. <script>      — JavaScript for nav, form validation, etc.
+    ============================================================
+-->
 <html lang="en">
 
+<!-- ============================================================
+     HEAD — page metadata, fonts, and stylesheet
+     ============================================================
+     This section is not visible on screen. It tells the browser
+     how to display the page and which resources to load.
+     ============================================================ -->
 <head>
+    <!-- Character encoding — always keep this as UTF-8 -->
     <meta charset="UTF-8" />
+
+    <!-- Makes the page scale correctly on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser tab title — update this if the organisation name changes -->
     <title>i-UG - The UK IBM i User Group</title>
+
+    <!-- Short description shown in Google search results (keep under ~160 characters) -->
     <meta name="description" content="i-UG connects and supports the IBM i community across the United Kingdom through conferences, workshops and networking." />
+
+    <!-- Preconnect hints speed up loading the Google Fonts stylesheet below -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- IBM Plex Sans — the brand typeface used throughout the site.
+         Weights loaded: 400 (regular), 500 (medium), 600 (semibold), 700 (bold) -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS — the compiled stylesheet with all utility classes.
+         Do NOT switch this to a CDN version or a different CSS framework
+         without approval from the Development Director. -->
     <link rel="stylesheet" href="./assets/css/tailwind.css" />
+
+    <!-- Minimal inline style: sets IBM Plex Sans as the default font for
+         everything on the page. Tailwind handles all other styling. -->
     <style>
         body {
             font-family: "IBM Plex Sans", system-ui, sans-serif;
@@ -17,33 +97,64 @@
     </style>
 </head>
 
+<!-- ============================================================
+     BODY — all visible page content starts here
+     ============================================================ -->
 <body>
+
+    <!-- ============================================================
+         HEADER / NAVIGATION BAR
+         ============================================================
+         This bar is "sticky" — it stays fixed to the top of the
+         screen while the user scrolls (class="fixed inset-x-0 top-0").
+         The JavaScript at the bottom of this file makes it appear
+         with a white background + shadow once the user scrolls down.
+
+         To add or remove navigation links:
+           - Edit both the desktop <nav> (below) AND the mobile menu
+             <div id="mobile-menu"> — they are separate copies.
+         ============================================================ -->
     <header id="site-header"
         class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/0 transition-all duration-300">
+
+        <!-- Inner wrapper — limits content width to max-w-6xl and centres it -->
         <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 lg:px-8">
+
+            <!-- Logo + organisation name (top-left) -->
+            <!-- href="#" scrolls back to the top of the page -->
             <a href="#" class="flex items-center gap-3" aria-label="i-UG home">
+                <!-- Logo image — replace src with a new file in assets/logo/ if needed -->
                 <img src="./assets/logo/logo.png" alt="i-UG logo" class="h-10 w-10" />
+                <!-- Organisation name — hidden on very small screens (sm:inline shows it on small+) -->
                 <span class="hidden text-sm font-medium text-ibm-carbon-light sm:inline">
                     The UK IBM i User Group
                 </span>
             </a>
 
+            <!-- ── DESKTOP NAVIGATION (hidden on mobile — md:flex shows it on medium+ screens) ── -->
             <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
+                <!-- Each link uses href="#section-id" to scroll to a section on the page.
+                     To add a new link: copy one of the <a> tags below and update the href and text. -->
                 <a href="#about"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">About</a>
                 <a href="#conference"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Conference</a>
                 <a href="#gallery"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Gallery</a>
-
                 <a href="#contact"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
+
+                <!-- "Call to action" button — styled differently from the plain text links above -->
                 <a href="#contact"
                     class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                     Join the Community
                 </a>
             </nav>
 
+            <!-- ── HAMBURGER BUTTON (visible on mobile only — md:hidden hides it on medium+ screens) ── -->
+            <!-- Clicking this button opens/closes the mobile menu below.
+                 The three <span> elements are the three horizontal lines of the hamburger icon.
+                 JavaScript animates them into an ✕ when the menu is open. -->
             <button id="mobile-toggle" type="button"
                 class="inline-flex h-10 w-10 items-center justify-center text-ibm-carbon md:hidden"
                 aria-label="Toggle menu" aria-expanded="false">
@@ -58,9 +169,15 @@
             </button>
         </div>
 
+        <!-- ── MOBILE DROPDOWN MENU ── -->
+        <!-- This panel slides open/closed by toggling height via JavaScript.
+             It is only rendered on mobile (md:hidden).
+             IMPORTANT: if you add/remove links in the desktop nav above, mirror
+             those changes here too so mobile users see the same options. -->
         <div id="mobile-menu"
             class="max-h-0 overflow-hidden border-t-0 border-gray-200 bg-white transition-all duration-300 md:hidden">
             <div class="mx-auto flex w-full max-w-6xl flex-col gap-1 px-6 py-4 lg:px-8">
+                <!-- class="mobile-link" is used by JavaScript to close the menu when a link is tapped -->
                 <a href="#about"
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">About</a>
                 <a href="#conference"
@@ -71,6 +188,8 @@
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Members</a>
                 <a href="#contact"
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
+
+                <!-- "Call to action" button in mobile menu -->
                 <a href="#contact"
                     class="mobile-link mt-2 inline-flex w-full items-center justify-center rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                     Join the Community
@@ -78,37 +197,69 @@
             </div>
         </div>
     </header>
+    <!-- END HEADER -->
 
+    <!-- ============================================================
+         MAIN CONTENT
+         All page sections live inside this <main> element.
+         ============================================================ -->
     <main>
+
+        <!-- ============================================================
+             HERO SECTION — full-width intro banner
+             ============================================================
+             This is the first thing visitors see. It contains the logo,
+             headline, subheadline, and two call-to-action buttons.
+
+             TO UPDATE:
+             - Headline text: edit the <h1> tag below
+             - Subheadline:   edit the <p> below the <h1>
+             - Button labels or links: edit the two <a> tags in the
+               "flex flex-wrap" div below
+             ============================================================ -->
         <section class="relative overflow-hidden border-b border-gray-200 bg-white">
+
+            <!-- Decorative background grid pattern — purely visual, hidden from screen readers -->
             <div class="ibm-grid absolute inset-0" aria-hidden="true"></div>
+            <!-- Decorative diagonal overlay — purely visual, hidden from screen readers -->
             <div class="ibm-diagonal absolute inset-0" aria-hidden="true"></div>
+            <!-- Blue vertical accent bar on the left edge of the section -->
             <div class="absolute left-0 top-0 h-full w-1.5 bg-ibm-blue" aria-hidden="true"></div>
 
+            <!-- Content container — centred, max width 6xl -->
             <div class="relative mx-auto w-full max-w-6xl px-6 lg:px-8">
                 <div class="flex flex-col justify-center py-28 sm:py-36">
+
+                    <!-- Hero logo — larger version displayed above the headline -->
                     <img src="./assets/logo/logo.png" alt="i-UG logo"
                         class="mb-8 h-20 w-20 animate-fade-in sm:h-24 sm:w-24" />
+
+                    <!-- Eyebrow label — the small text + line above the main headline -->
                     <p
                         class="mb-5 flex items-center gap-3 text-sm font-semibold tracking-widest text-ibm-blue animate-fade-in">
                         <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                         The UKs Largest IBM i User Group
                     </p>
 
+                    <!-- Main headline — the largest text on the page -->
                     <h1
                         class="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight text-ibm-carbon animate-fade-up sm:text-5xl lg:text-6xl">
                         i-UG - The UK IBM i User Group
                     </h1>
 
+                    <!-- Subheadline / supporting text below the main headline -->
                     <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ibm-carbon-light animate-fade-up">
                         Connecting &amp; supporting the IBM i community across the United Kingdom.
                     </p>
 
+                    <!-- Call-to-action buttons -->
                     <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up">
+                        <!-- Primary CTA — solid blue button, scrolls to #contact -->
                         <a href="#contact"
                             class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                             Join the Community
                         </a>
+                        <!-- Secondary CTA — outline button, scrolls to #about -->
                         <a href="#about"
                             class="inline-flex items-center justify-center gap-2 rounded-md border border-ibm-carbon bg-transparent px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-carbon transition-all duration-200 hover:bg-ibm-carbon hover:text-white">
                             Learn more
@@ -117,35 +268,94 @@
                 </div>
             </div>
         </section>
+        <!-- END HERO SECTION -->
 
+        <!-- ============================================================
+             PHOTO STRIP — masonry-style collage of event photos
+             ============================================================
+             A grid of photos displayed in a Pinterest-style masonry
+             layout. Columns increase as screen width grows:
+               1 column on mobile → 2 on sm → 3 on md → 4 on lg
+
+             TO ADD OR REPLACE A PHOTO:
+             1. Copy a new image into assets/images/ (JPEG recommended,
+                keep file size under ~300 KB for fast loading).
+             2. Duplicate one of the <div class="break-inside-avoid">
+                blocks below.
+             3. Update the src="..." and alt="..." attributes.
+
+             The alt text should briefly describe what is in the image
+             (important for accessibility and screen readers).
+
+             NOTE: photos are numbered photo1.jpeg through photo9.jpeg.
+             The gallery section further down uses photo10–photo12.jpeg.
+             ============================================================ -->
         <section class="bg-white px-4 py-10">
+            <!-- "columns-..." is a CSS multi-column layout.
+                 "break-inside-avoid" prevents an image from being split
+                 across two columns. -->
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
+
+                <!-- Photo 1 — replace src and alt to update this image -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo1.jpeg" alt="Photo 1"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 2 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo2.jpeg" alt="Photo 2"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 3 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo3.jpeg" alt="Photo 3"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 4 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo4.jpeg" alt="Photo 4"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 5 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo5.jpeg" alt="Photo 5"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 6 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo6.jpeg" alt="Photo 6"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 7 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo7.jpeg" alt="Photo 7"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 8 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo8.jpeg" alt="Photo 8"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+
+                <!-- Photo 9 -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo9.jpeg" alt="Photo 9"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
             </div>
         </section>
+        <!-- END PHOTO STRIP -->
 
+        <!-- ============================================================
+             ABOUT SECTION  (id="about")
+             ============================================================
+             Describes what i-UG is and its mission. Laid out in two
+             columns on medium+ screens, single column on mobile.
+
+             TO UPDATE:
+             - Organisation description: edit the two <p> tags in the
+               left column (inside the border-l-2 border-ibm-blue div).
+             - Mission statement: edit the <p> inside the right column.
+             - Stats (UK-wide / Vendor-neutral / Year-round): update the
+               three <dt>/<dd> pairs inside the <dl> tag.
+             ============================================================ -->
         <section id="about" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+
+                <!-- Section header — eyebrow label + heading -->
                 <header class="mb-12 animate-fade-up">
                     <p
                         class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <!-- Decorative horizontal line before the eyebrow text -->
                         <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                         About i-UG
                     </p>
@@ -154,7 +364,11 @@
                     </h2>
                 </header>
 
+                <!-- Two-column grid (stacks to single column on mobile) -->
                 <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+
+                    <!-- LEFT COLUMN — organisation overview paragraphs -->
+                    <!-- The blue left border (border-l-2 border-ibm-blue) is a visual accent -->
                     <div class="animate-slide-in border-l-2 border-ibm-blue pl-6">
                         <p class="text-base leading-relaxed text-ibm-carbon-light">
                             i-UG is the United Kingdom&apos;s independent user group for the IBM i platform. We bring
@@ -168,6 +382,7 @@
                         </p>
                     </div>
 
+                    <!-- RIGHT COLUMN — mission statement + stat highlights -->
                     <div class="animate-slide-in border-l-2 border-gray-200 pl-6">
                         <h3 class="text-lg font-semibold text-ibm-carbon">Our mission</h3>
                         <p class="mt-3 text-base leading-relaxed text-ibm-carbon-light">
@@ -176,50 +391,90 @@
                             generations of professionals.
                         </p>
 
+                        <!-- Statistics / highlights displayed in a 3-column row.
+                             <dl> = description list, <dt> = term, <dd> = definition -->
                         <dl class="mt-8 grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
+                            <!-- Stat 1 — update the <dt> text to change the headline value -->
                             <div>
                                 <dt class="text-2xl font-semibold text-ibm-blue">UK-wide</dt>
                                 <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Regional reach
                                 </dd>
                             </div>
+                            <!-- Stat 2 -->
                             <div>
                                 <dt class="text-2xl font-semibold text-ibm-blue">Vendor-neutral</dt>
                                 <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Independent</dd>
                             </div>
+                            <!-- Stat 3 -->
                             <div>
                                 <dt class="text-2xl font-semibold text-ibm-blue">Year-round</dt>
-                                <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Events and
+                                <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Events &amp;
                                     learning</dd>
                             </div>
                         </dl>
                     </div>
+
                 </div>
             </div>
         </section>
+        <!-- END ABOUT SECTION -->
 
+        <!-- ============================================================
+             CONFERENCE SECTION  (id="conference")
+             ============================================================
+             Promotes the next i-UG conference. The card has a blue
+             background with a left column for details and a right column
+             for the date/location/register button.
+
+             *** MOST LIKELY TO NEED UPDATING EACH YEAR ***
+
+             TO UPDATE:
+             - Conference name:  edit the <h2> text
+             - Description:      edit the <p class="mt-5 ..."> text
+             - Bullet points:    edit the three <li> items in the <ul>
+             - Date:             edit the <dd> after the "Date" <dt>
+             - Location:         edit the <dd> after the "Location" <dt>
+             - Register button:  change type="button" to an <a href="...">
+                                 once registration is open, OR update the
+                                 JavaScript to point to the booking URL
+             ============================================================ -->
         <section id="conference" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+
+                <!-- Conference card — solid IBM blue background -->
                 <div class="relative overflow-hidden bg-ibm-blue text-white shadow-sm">
+
+                    <!-- Decorative diagonal pattern on top of the blue background -->
                     <div class="ibm-diagonal absolute inset-0 opacity-50" aria-hidden="true"></div>
 
+                    <!-- Content grid: 1 column on mobile, 5 columns on large screens
+                         Left section takes 3/5 columns, right section takes 2/5 -->
                     <div class="relative grid grid-cols-1 gap-10 p-10 sm:p-14 lg:grid-cols-5 lg:gap-12">
+
+                        <!-- LEFT — conference description (3 of 5 columns on large screens) -->
                         <div class="lg:col-span-3">
+
+                            <!-- Eyebrow label -->
                             <p
                                 class="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-white/80">
                                 <span class="h-px w-8 bg-white/80" aria-hidden="true"></span>
                                 Next Conference
                             </p>
 
+                            <!-- *** UPDATE THIS: conference name *** -->
                             <h2 class="text-3xl font-semibold leading-tight sm:text-4xl">
                                 i-UG Conference Midlands 2026
                             </h2>
 
+                            <!-- *** UPDATE THIS: one-paragraph description *** -->
                             <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/90">
                                 A full day of IBM i sessions covering modernisation, security, RPG, Db2 for i and the
                                 Power roadmap, plus hands-on workshops and community networking.
                             </p>
 
+                            <!-- *** UPDATE THIS: bullet-point highlights for the conference *** -->
                             <ul class="mt-8 space-y-3">
+                                <!-- Each <li> has a small white square bullet (the <span> element) -->
                                 <li class="flex items-start gap-3 text-sm text-white/90"><span
                                         class="mt-1.5 h-1.5 w-1.5 flex-none bg-white" aria-hidden="true"></span>Keynotes
                                     from IBM and industry leaders</li>
@@ -233,13 +488,19 @@
                             </ul>
                         </div>
 
+                        <!-- RIGHT — date, location, and register button (2 of 5 columns on large screens) -->
+                        <!-- The left border only appears on large screens (lg:border-l) -->
                         <div
                             class="flex flex-col justify-center gap-6 border-white/20 lg:col-span-2 lg:border-l lg:pl-12">
+
+                            <!-- Date and location displayed as a definition list -->
                             <dl class="space-y-5">
+                                <!-- *** UPDATE THIS: conference date *** -->
                                 <div>
                                     <dt class="text-xs font-semibold uppercase tracking-wider text-white/70">Date</dt>
                                     <dd class="mt-1 text-lg font-medium">Tuesday 3rd November 2026</dd>
                                 </div>
+                                <!-- *** UPDATE THIS: conference venue *** -->
                                 <div>
                                     <dt class="text-xs font-semibold uppercase tracking-wider text-white/70">Location
                                     </dt>
@@ -247,6 +508,14 @@
                                 </div>
                             </dl>
 
+                            <!-- Register button — currently a plain button (no link).
+                                 When registration opens, replace this <button> with:
+                                 <a href="YOUR_REGISTRATION_URL" target="_blank" rel="noopener"
+                                    class="inline-flex w-full items-center justify-center rounded-md bg-white
+                                           px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-blue
+                                           transition-all duration-200 hover:bg-gray-100">
+                                     Register here
+                                 </a> -->
                             <button type="button"
                                 class="inline-flex w-full items-center justify-center rounded-md bg-white px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-blue transition-all duration-200 hover:bg-gray-100">
                                 Register here
@@ -256,9 +525,30 @@
                 </div>
             </div>
         </section>
+        <!-- END CONFERENCE SECTION -->
 
+        <!-- ============================================================
+             SPONSORS / PARTNERS STRIP
+             ============================================================
+             A grid of sponsor and partner names. Currently displayed as
+             text — replace with <img> tags if you have logo files.
+
+             TO ADD A SPONSOR:
+             1. Copy one of the <li> blocks below.
+             2. Update the text inside it to the new sponsor's name.
+             3. If you have a logo image, replace the text with:
+                <img src="./assets/images/sponsor-name.png"
+                     alt="Sponsor Name logo" class="max-h-10 w-auto" />
+
+             TO REMOVE A SPONSOR: delete its <li> block.
+
+             The grid automatically adjusts columns:
+               2 cols on mobile → 3 on sm → 6 on large screens.
+             ============================================================ -->
         <section aria-label="Sponsors and partners" class="border-y border-gray-200 bg-ibm-gray">
             <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8">
+
+                <!-- Section label — centred, with decorative lines either side -->
                 <p
                     class="mb-8 flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
@@ -266,49 +556,83 @@
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                 </p>
 
+                <!-- Sponsor list — add/remove <li> items here -->
                 <ul class="grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
+                    <!-- Sponsor: IBM -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         IBM</li>
+                    <!-- Sponsor: Arcad -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Arcad</li>
+                    <!-- Sponsor: MKT Computers -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         MKT Computers</li>
+                    <!-- Sponsor: Fresche Solutions -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Fresche Solutions</li>
+                    <!-- Sponsor: Proximity -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Proximity</li>
+                    <!-- Sponsor: Service Express -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Service Express</li>
+                    <!-- Sponsor: PowerWire -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         PowerWire</li>
+                    <!-- Sponsor: Rowton IT -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Rowton IT</li>
+                    <!-- Sponsor: Celerity -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Celerity</li>
+                    <!-- Sponsor: Shield -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Shield</li>
+                    <!-- Sponsor: Meridian IT -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         Meridian IT</li>
+                    <!-- Sponsor: FalconStor -->
                     <li
                         class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
                         FalconStor</li>
                 </ul>
             </div>
         </section>
+        <!-- END SPONSORS STRIP -->
 
+        <!-- ============================================================
+             GALLERY SECTION  (id="gallery")
+             ============================================================
+             Three featured photos from past events, displayed in a 3-
+             column grid on large screens (1 col mobile, 2 col tablet).
+
+             Each photo is wrapped in a <figure> element with a
+             <figcaption> below it for the caption text.
+
+             TO UPDATE A GALLERY IMAGE:
+             1. Place the new image in assets/images/.
+             2. Update src="..." with the filename.
+             3. Update alt="..." with a description of the photo.
+             4. Update the <span> inside <figcaption> with a new caption.
+
+             TO ADD MORE IMAGES: copy an entire <figure>...</figure> block
+             and update the src, alt, and caption.
+             ============================================================ -->
         <section id="gallery" class="bg-ibm-gray py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+
+                <!-- Section header -->
                 <header class="mb-12 animate-fade-up">
                     <p
                         class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
@@ -320,20 +644,30 @@
                     </h2>
                 </header>
 
+                <!-- 3-column photo grid (1 col mobile → 2 col sm → 3 col lg) -->
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+                    <!-- Gallery image 1 -->
+                    <!-- "group" on the <figure> allows the image inside to zoom on hover
+                         (group-hover:scale-105 on the <img>) -->
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
+                        <!-- aspect-[4/3] locks the image to a 4:3 ratio to keep the grid uniform -->
                         <div class="relative aspect-[4/3] overflow-hidden">
                             <img src="./assets/images/photo11.jpeg"
                                 alt="Speaker delivering a keynote at an i-UG conference"
                                 class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
                         </div>
+                        <!-- Caption bar below the image -->
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <!-- *** UPDATE THIS: photo caption *** -->
                             <span class="text-sm font-medium text-ibm-carbon">Annual Conference - Keynote</span>
+                            <!-- Decorative blue line on the right of the caption -->
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
 
+                    <!-- Gallery image 2 -->
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
                         <div class="relative aspect-[4/3] overflow-hidden">
@@ -342,11 +676,13 @@
                                 class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
                         </div>
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <!-- *** UPDATE THIS: photo caption *** -->
                             <span class="text-sm font-medium text-ibm-carbon">Community Networking</span>
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
 
+                    <!-- Gallery image 3 -->
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
                         <div class="relative aspect-[4/3] overflow-hidden">
@@ -355,16 +691,42 @@
                                 class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
                         </div>
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <!-- *** UPDATE THIS: photo caption *** -->
                             <span class="text-sm font-medium text-ibm-carbon">Technical Workshop</span>
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
+
                 </div>
             </div>
         </section>
+        <!-- END GALLERY SECTION -->
 
+        <!-- ============================================================
+             CONTACT SECTION  (id="contact")
+             ============================================================
+             Contains a short description on the left and a contact form
+             on the right. The form is validated by JavaScript at the
+             bottom of this file before it is submitted.
+
+             TO UPDATE:
+             - Intro text and bullet points: edit the <p> and <ul> in the
+               left column (lg:col-span-2 div).
+             - Form fields: the three inputs are Name, Email, and Message.
+               Do not change the id="contact-name/email/message" values —
+               the JavaScript references them by those IDs.
+             - Submit button label: edit "Send message" in the <button>.
+
+             HOW THE FORM SUBMISSION WORKS:
+             Currently the form does not actually send an email. The
+             JavaScript shows a success message after a short delay as a
+             placeholder. To wire up a real backend you would need to
+             update the contactForm submit handler in the <script> block.
+             ============================================================ -->
         <section id="contact" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+
+                <!-- Section header -->
                 <header class="mb-12 animate-fade-up">
                     <p
                         class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
@@ -376,14 +738,20 @@
                     </h2>
                 </header>
 
+                <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
                 <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
+
+                    <!-- LEFT — contact description and enquiry types -->
                     <div class="lg:col-span-2">
                         <div class="border-l-2 border-ibm-blue pl-6">
+                            <!-- *** UPDATE THIS: intro paragraph *** -->
                             <p class="text-base leading-relaxed text-ibm-carbon-light">
                                 Whether you want to join the community, speak at an event, or partner with us, we would
                                 love to hear from you. Complete the form and a member of the i-UG team will be in touch.
                             </p>
+                            <!-- *** UPDATE THIS: list of enquiry types *** -->
                             <ul class="mt-8 space-y-4 text-sm text-ibm-carbon-light">
+                                <!-- Each <li> has a short blue dash (the <span>) as a bullet point -->
                                 <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
                                         aria-hidden="true"></span>Membership and community enquiries</li>
                                 <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
@@ -394,63 +762,105 @@
                         </div>
                     </div>
 
+                    <!-- RIGHT — contact form -->
                     <div class="lg:col-span-3">
+                        <!-- noValidate disables the browser's built-in validation so our
+                             custom JavaScript validation (below) runs instead -->
                         <form id="contact-form" noValidate
                             class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
                             <div class="grid grid-cols-1 gap-6">
+
+                                <!-- Name + Email fields — side by side on small+ screens -->
                                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+
+                                    <!-- Name field -->
                                     <div class="flex flex-col gap-2">
+                                        <!-- for="contact-name" links this label to the input below -->
                                         <label for="contact-name"
                                             class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
                                         <input id="contact-name" name="name" type="text" placeholder="Jane Smith"
                                             class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <!-- Error message — hidden by default, shown by JavaScript on validation failure -->
                                         <p id="error-name" class="hidden text-xs font-medium text-red-600"></p>
                                     </div>
 
+                                    <!-- Email field -->
                                     <div class="flex flex-col gap-2">
                                         <label for="contact-email"
                                             class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Email</label>
                                         <input id="contact-email" name="email" type="email"
                                             placeholder="jane@company.co.uk"
                                             class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <!-- Error message — hidden by default -->
                                         <p id="error-email" class="hidden text-xs font-medium text-red-600"></p>
                                     </div>
                                 </div>
 
+                                <!-- Message textarea — full width -->
                                 <div class="flex flex-col gap-2">
                                     <label for="contact-message"
                                         class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Message</label>
+                                    <!-- rows="5" sets the visible height of the text area -->
                                     <textarea id="contact-message" name="message" rows="5"
                                         placeholder="Tell us how you'd like to get involved with i-UG..."
                                         class="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue"></textarea>
+                                    <!-- Error message — hidden by default -->
                                     <p id="error-message" class="hidden text-xs font-medium text-red-600"></p>
                                 </div>
 
+                                <!-- Submit button row -->
                                 <div class="flex flex-wrap items-center gap-4">
                                     <button id="contact-submit" type="submit"
                                         class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                                         Send message
                                     </button>
+                                    <!-- Status message — hidden until form is submitted.
+                                         JavaScript writes "Thank you…" into this element on success. -->
                                     <p id="contact-status" class="hidden text-sm font-medium" role="status"></p>
                                 </div>
+
                             </div>
                         </form>
                     </div>
+
                 </div>
             </div>
         </section>
-    </main>
+        <!-- END CONTACT SECTION -->
 
+    </main>
+    <!-- END MAIN CONTENT -->
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================
+         Contains the logo, copyright notice, and social media links.
+
+         TO UPDATE:
+         - Copyright year/name: edit the text inside the <p> tag.
+         - Social links: update the href="..." on each <a> tag.
+           Replace "#" with the actual profile URL, e.g.:
+           href="https://www.linkedin.com/company/i-ug"
+         - To add a new social link: copy one of the <li> elements
+           and update the href and link text.
+         ============================================================ -->
     <footer class="border-t border-gray-800 bg-ibm-carbon text-gray-300">
+        <!-- Inner wrapper — side-by-side layout on small+ screens -->
         <div
             class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 lg:px-8 sm:flex-row sm:items-center">
+
+            <!-- Logo + copyright text -->
             <div class="flex items-center gap-3">
+                <!-- White version of the logo for use on the dark footer background -->
                 <img src="./assets/logo/logo-white.png" alt="i-UG logo" class="h-9 w-9" />
+                <!-- *** UPDATE THIS: copyright year and organisation name *** -->
                 <p class="text-sm">&copy; FormaServe Systems 2026</p>
             </div>
 
+            <!-- Social media links -->
             <nav aria-label="Social links">
                 <ul class="flex flex-wrap gap-6">
+                    <!-- *** UPDATE THESE: replace # with real profile URLs *** -->
                     <li><a href="#" class="text-sm text-gray-400 transition-colors hover:text-white">LinkedIn</a></li>
                     <li><a href="#" class="text-sm text-gray-400 transition-colors hover:text-white">X / Twitter</a>
                     </li>
@@ -459,17 +869,45 @@
             </nav>
         </div>
     </footer>
+    <!-- END FOOTER -->
 
+    <!-- ============================================================
+         JAVASCRIPT
+         ============================================================
+         This script block handles three things:
+           1. Sticky header — adds a background/shadow when scrolling
+           2. Mobile menu   — open/close the hamburger menu
+           3. Contact form  — client-side validation before submit
+
+         There are no external JavaScript libraries used here.
+         Everything is plain ("vanilla") JavaScript.
+
+         ⚠️  Do NOT change element IDs (e.g. "site-header",
+         "contact-form") without also updating them here, as the
+         script finds elements on the page by those IDs.
+         ============================================================ -->
     <script>
+        // ── 1. STICKY HEADER ──────────────────────────────────────────
+        // Grab references to the header element and the three hamburger lines.
         const header = document.getElementById("site-header");
         const toggleButton = document.getElementById("mobile-toggle");
         const mobileMenu = document.getElementById("mobile-menu");
         const line1 = document.getElementById("line-1");
         const line2 = document.getElementById("line-2");
         const line3 = document.getElementById("line-3");
+
+        // Select all mobile nav links so we can close the menu when one is tapped.
         const mobileLinks = document.querySelectorAll(".mobile-link");
+
+        // Track whether the mobile menu is currently open or closed.
         let menuOpen = false;
 
+        /**
+         * applyHeaderState — called on every scroll event.
+         * When the user has scrolled more than 8px from the top, give the header
+         * a white background and a subtle shadow so it doesn't blend into the page.
+         * When the user is at the very top, make it transparent again.
+         */
         function applyHeaderState() {
             if (window.scrollY > 8) {
                 header.classList.add("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur");
@@ -480,20 +918,38 @@
             }
         }
 
+        /**
+         * setMenuState — opens or closes the mobile menu.
+         * @param {boolean} open  Pass true to open, false to close.
+         *
+         * When open:
+         *   - The menu panel slides down (max-h-80 allows height).
+         *   - The three hamburger lines animate into an ✕.
+         * When closed:
+         *   - The menu collapses (max-h-0 hides it).
+         *   - The ✕ animates back to three horizontal lines.
+         */
         function setMenuState(open) {
             menuOpen = open;
+            // Update the aria-expanded attribute for accessibility (screen readers).
             toggleButton.setAttribute("aria-expanded", String(open));
 
             if (open) {
+                // Slide the menu panel down.
                 mobileMenu.classList.add("max-h-80", "border-t");
                 mobileMenu.classList.remove("max-h-0", "border-t-0");
+                // Animate line 1: rotate it 45° downward to form the top of the ✕.
                 line1.classList.add("translate-y-[7px]", "rotate-45");
+                // Hide the middle line.
                 line2.classList.add("opacity-0");
                 line2.classList.remove("opacity-100");
+                // Animate line 3: rotate it -45° upward to form the bottom of the ✕.
                 line3.classList.add("-translate-y-[7px]", "-rotate-45");
             } else {
+                // Collapse the menu panel.
                 mobileMenu.classList.add("max-h-0", "border-t-0");
                 mobileMenu.classList.remove("max-h-80", "border-t");
+                // Reset all three lines back to horizontal.
                 line1.classList.remove("translate-y-[7px]", "rotate-45");
                 line2.classList.remove("opacity-0");
                 line2.classList.add("opacity-100");
@@ -501,15 +957,29 @@
             }
         }
 
+        // Apply the correct header style immediately on page load,
+        // and update it whenever the user scrolls.
         window.addEventListener("scroll", applyHeaderState, { passive: true });
         applyHeaderState();
+
+        // Start with the mobile menu closed.
         setMenuState(false);
 
+        // Toggle the menu open/closed when the hamburger button is clicked.
         toggleButton.addEventListener("click", () => setMenuState(!menuOpen));
+
+        // Close the mobile menu whenever any mobile nav link is clicked
+        // (the page will scroll to the section and the menu should tidy away).
         mobileLinks.forEach((link) => {
             link.addEventListener("click", () => setMenuState(false));
         });
 
+        // ── 2. MEMBER LOOKUP FORM ─────────────────────────────────────
+        // These variables reference the member lookup form elements.
+        // NOTE: the form HTML for this section has been removed from the
+        // page, so these getElementById calls will return null and the
+        // event listener below will silently fail. This block can be
+        // removed if the members section is not being restored.
         const memberForm = document.getElementById("member-form");
         const memberQuery = document.getElementById("member-query");
         const memberError = document.getElementById("member-error");
@@ -521,16 +991,20 @@
             event.preventDefault();
             const value = memberQuery.value.trim();
 
+            // Show an error if the field is empty.
             if (!value) {
                 memberError.textContent = "Please enter your membership number or email address.";
                 memberError.classList.remove("hidden");
                 return;
             }
 
+            // Hide any previous error and show a loading state.
             memberError.classList.add("hidden");
             memberSubmit.textContent = "Looking up...";
             memberSubmit.disabled = true;
 
+            // Simulate a lookup delay (400ms), then show the result placeholder.
+            // Replace this setTimeout with a real fetch() call to an API if needed.
             setTimeout(() => {
                 memberPlaceholder.classList.add("hidden");
                 memberResult.classList.remove("hidden");
@@ -539,6 +1013,8 @@
             }, 400);
         });
 
+        // ── 3. CONTACT FORM VALIDATION ────────────────────────────────
+        // Grab references to the contact form and its fields.
         const contactForm = document.getElementById("contact-form");
         const contactStatus = document.getElementById("contact-status");
         const errorName = document.getElementById("error-name");
@@ -546,43 +1022,66 @@
         const errorMessage = document.getElementById("error-message");
         const submitButton = document.getElementById("contact-submit");
 
+        /**
+         * showFieldError — shows or hides an inline error message under a field.
+         * @param {HTMLElement} element  The <p> error element below the field.
+         * @param {string}      message  The error text. Pass "" to clear/hide it.
+         */
         function showFieldError(element, message) {
             if (!message) {
+                // Empty message means no error — hide the element.
                 element.classList.add("hidden");
                 element.textContent = "";
                 return;
             }
+            // Show the error text.
             element.textContent = message;
             element.classList.remove("hidden");
         }
 
+        /**
+         * validEmail — quick check that an email looks roughly valid.
+         * Uses a simple regex: something@something.something
+         * @param {string} email
+         * @returns {boolean}
+         */
         function validEmail(email) {
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
+        // Handle contact form submission.
         contactForm.addEventListener("submit", function (event) {
+            // Prevent the default browser form submission (which would reload the page).
             event.preventDefault();
 
+            // Read the current value of each field, trimming extra whitespace.
             const name = document.getElementById("contact-name").value.trim();
             const email = document.getElementById("contact-email").value.trim();
             const message = document.getElementById("contact-message").value.trim();
 
+            // Build error strings for each field ("" means no error).
             const nameError = name ? "" : "Please enter your name.";
             const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
             const messageError = message.length >= 10 ? "" : "Please enter at least 10 characters.";
 
+            // Display or clear each inline error.
             showFieldError(errorName, nameError);
             showFieldError(errorEmail, emailError);
             showFieldError(errorMessage, messageError);
 
+            // If any field has an error, stop here and do not submit.
             if (nameError || emailError || messageError) {
                 contactStatus.classList.add("hidden");
                 return;
             }
 
+            // All fields are valid — disable the button and show a sending state.
             submitButton.disabled = true;
             submitButton.textContent = "Sending...";
 
+            // Simulate a 450ms send delay, then show a success message.
+            // TO WIRE UP A REAL BACKEND: replace this setTimeout with a
+            // fetch() POST to your API endpoint.
             setTimeout(() => {
                 contactForm.reset();
                 submitButton.disabled = false;
