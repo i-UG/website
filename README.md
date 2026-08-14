@@ -19,6 +19,15 @@ A single-page informational site covering events, news & how to get in touch.
 ## Project structure
 
 ```text
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md       # Bug report issue template
+│   │   ├── config.yml          # Issue template chooser config
+│   │   ├── feature_request.md  # Feature request issue template
+│   │   └── issue.md            # General issue template
+│   ├── workflows/
+│   │   └── azure-static-web-apps-yellow-bay-013bff303.yml  # Azure deployment workflow
+│   └── PULL_REQUEST_TEMPLATE.md  # PR description template
 ├── index.html          # The single page — all content lives here
 ├── /assets/css         # Tailwind stylesheets
 ├── /assets/images      # Images
