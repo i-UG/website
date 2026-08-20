@@ -19,20 +19,22 @@ A single-page informational site covering events, news & how to get in touch.
 ## Project structure
 
 ```text
+├── .git/                         # Git version control - do not edit!
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md       # Bug report issue template
-│   │   ├── config.yml          # Issue template chooser config
-│   │   ├── feature_request.md  # Feature request issue template
-│   │   └── issue.md            # General issue template
+│   │   ├── bug_report.md         # Bug report issue template
+│   │   ├── config.yml            # Issue template chooser config
+│   │   ├── feature_request.md    # Feature request issue template
+│   │   └── issue.md              # General issue template
 │   ├── workflows/
 │   │   └── azure-static-web-apps-yellow-bay-013bff303.yml  # Azure deployment workflow
 │   └── PULL_REQUEST_TEMPLATE.md  # PR description template
-├── index.html          # The single page — all content lives here
-├── /assets/css         # Tailwind stylesheets
-├── /assets/images      # Images
-├── /assets/logo        # Images
-└── README.md           # this bumph
+├── index.html                    # The single page — all content lives here
+├── /assets/css                   # Tailwind stylesheets
+├── /assets/images                # Images
+├── /assets/logo                  # Logos
+├── website_update_guide.pdf      # Images
+└── README.md                     # this bumph
 ```
 
 ## How changes get published
@@ -45,7 +47,7 @@ Nobody edits the live site directly. Every change goes through a review step:
 4. Once approved, the Director **merges** the pull request. This is the only step that can publish a change — only the Development Director can merge into `main`.
 5. Azure automatically rebuilds and republishes the site, usually within a minute or two. No manual deployment step is ever needed.
 
-See the **Website Update Guide** [Found here](./public/docs/Website-Update-Guide.pdf), for the full walkthrough.
+See the **Website Update Guide** [Found here](./Website-Update-Guide.pdf), for the full walkthrough.
 
 ## Contributing (Committee members)
 
