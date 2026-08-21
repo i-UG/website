@@ -37,7 +37,7 @@ A single-page informational site covering events, news & how to get in touch.
 └── README.md                     # this bumph
 ```
 
-## How changes get published
+## How changes get published....
 
 Nobody edits the live site directly. Every change goes through a review step:
 
