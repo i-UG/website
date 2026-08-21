@@ -9,8 +9,8 @@ Thanks for wanting to contribute! This guide walks you through submitting a chan
 
 2. **Clone your fork to your computer**
    ```bash
-   git clone https://github.com/YOUR-USERNAME/REPO-NAME.git
-   cd REPO-NAME
+   git clone https://github.com/YOUR-USERNAME/website.git
+   cd website
    ```
 
 3. **Create a new branch for your change**
@@ -20,7 +20,7 @@ Thanks for wanting to contribute! This guide walks you through submitting a chan
    ```
 
 4. **Make your changes**
-   Edit the HTML/CSS files as needed. Keep changes focused — one topic per pull request is easier to review.
+   Edit the index.html files as needed. Keep changes focused — one topic per pull request is easier to review.
 
 5. **Commit and push your changes**
    ```bash
@@ -33,7 +33,7 @@ Thanks for wanting to contribute! This guide walks you through submitting a chan
    Go to your fork on GitHub — you'll see a prompt to "Compare & pull request." Click it, fill in a short description of what you changed and why, and submit.
 
 7. **Wait for review**
-   The pull request will be reviewed before merging. You might be asked to make small changes — that's normal, just push additional commits to the same branch and the PR updates automatically.
+   The pull request will be reviewed by the i-UG Development Director before merging. You might be asked to make small changes — that's normal, just push additional commits to the same branch and the PR updates automatically.
 
 ## Guidelines
 
