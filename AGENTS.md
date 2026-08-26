@@ -1,84 +1,72 @@
-# AI Agent Guidelines for i-UG Website
+# AGENTS.md
 
-## Project Overview
+This file provides guidance to agents when working with code in this repository.
 
-- **Type:** Single-page static informational website
-- **Tech Stack:** HTML, Tailwind CSS, hosted on Azure Static Web Apps
-- **Auto-deployment:** GitHub Actions → Azure (on merge to `main`)
-- **Approval process:** All changes require Development Director review and approval before merge
-
-## Hard Technical Constraints ⚠️
-
-**Do NOT violate these. Any proposed change to these should be escalated to the Development Director.**
+## Hard Constraints ⚠️
 
 1. **Single-page only** — All content lives in `index.html`. No additional pages allowed.
 2. **Tailwind CSS only** — No Bootstrap, custom stylesheets, or alternative CSS frameworks.
-3. **No CMS, no page builders** — Keep the stack static and simple.
-4. **No server-side code** — This is a static site.
+3. **No server-side code** — Static site only.
+4. `main` is branch-protected — PRs required; only [@AndyYouens](https://github.com/AndyYouens) can merge.
 
-## Typical Agent Tasks
+## No Build Step
 
-### Content Updates (In Scope)
+There is no `package.json`, no npm scripts, no build command. `assets/css/tailwind.css` is a **pre-compiled, committed artefact** — do not regenerate or delete it. There is no Tailwind config file.
 
-- Fix typos, update dates, event details, contact info
-- Small wording improvements, clarifications
-- Image updates/optimizations
-- Rewording for tone or clarity
+Local preview: `npx serve .`
 
-### Layout/Design Changes (Escalate to Development Director)
+## Custom Tailwind Classes (defined in compiled CSS — not standard Tailwind)
 
-- New sections or layout restructuring
-- Styling changes that go beyond fixing broken styles
-- Adding new interactive features
-- Changing the overall site structure
+| Class | Value |
+|---|---|
+| `text-ibm-blue` / `bg-ibm-blue` | `#0f62fe` |
+| `hover:bg-ibm-blue-dark` | `#0043ce` |
+| `text-ibm-carbon` / `bg-ibm-carbon` | `#393939` |
+| `text-ibm-carbon-light` | `#525252` |
+| `bg-ibm-gray` | `#f4f4f4` |
+| `ibm-grid` | decorative grid background (hero) |
+| `ibm-diagonal` | decorative diagonal overlay (hero) |
+| `animate-fade-in` | `fade-in 0.6s ease-out forwards` |
+| `animate-fade-up` | `fade-up 0.6s ease-out forwards` |
 
-## Important Workflows
+These are baked into `assets/css/tailwind.css`. Any new class you add to `index.html` that isn't already in the compiled file **will not render** — use only classes already present in the stylesheet.
 
-### Branch Protection
+## Navigation: Desktop + Mobile Must Stay in Sync
 
-- `main` is protected: no direct pushes, PRs required
-- Only Development Director can merge PRs
-- See [README.md](./README.md#branch-protection) for full details
+The desktop `<nav>` (line ~135) and `<div id="mobile-menu">` (line ~177) are **separate, independent copies** of the nav links. Adding/removing a link in one requires mirroring the change in the other.
 
-### Local Development
+Mobile nav links need `class="mobile-link"` — JavaScript uses this selector to close the menu on tap.
 
-```bash
-git clone https://github.com/i-UG/website
-cd website
-npx serve .  # Local preview
-```
+## Contact Form is a Simulation
 
-## File Structure
+The form (`id="contact-form"`) does **not** submit to any backend. The submit handler fakes a 450ms delay and shows a success message. To wire up a real endpoint, replace the `setTimeout` in the `<script>` block with a `fetch()` POST.
 
-```
-index.html           # The single page — edit here for content
-/assets/css/         # Tailwind stylesheets (rarely modified)
-/assets/images/      # Images
-/assets/logo/        # Logo assets
-/public/docs/        # External docs (e.g., Website-Update-Guide.pdf)
-```
+## Image Naming Convention
 
-## Key Resources
+- Photo strip (sections 1–9): `assets/images/photo1.jpeg` … `photo9.jpeg`
+- Gallery section (further down page): `photo10.jpeg` – `photo12.jpeg`
 
-- [Website Update Guide](./public/docs/Website-Update-Guide.pdf) — Full walkthrough for contributors
-- [README.md](./README.md) — Project overview and contributor guidelines
-- **Development Director:** [AndyYouens](https://github.com/AndyYouens) — Sole approver/merger for `main`
+Keep images under ~300 KB. JPEG format recommended.
 
-## Decision Framework for Agents
+## Page Sections Reference
+
+| Section | id / location |
+|---|---|
+| Header/nav | `id="site-header"` |
+| Hero | first `<section>` (no id) |
+| Photo strip | second `<section>` (no id) |
+| About | `id="about"` |
+| Conference | `id="conference"` |
+| Gallery | `id="gallery"` |
+| Contact | `id="contact"` |
+| Footer | `<footer>` |
+
+## Decision Framework
 
 | Situation | Action |
-|-----------|--------|
-| Fix typo, update date/event info | ✅ Implement directly |
-| Improve wording or clarity | ✅ Implement directly |
-| Fix broken styles (CSS) | ✅ Implement directly |
-| New section, redesign, or layout change | ⚠️ Open issue/draft PR for discussion first |
-| Change to tech stack (CSS framework, new pages, etc.) | 🛑 Escalate to Development Director |
-| Questions about scope or suitability | 💬 Open as discussion or comment in PR |
-
-## Git Workflow
-
-1. Create a feature branch from `main`
-2. Make and commit changes
-3. Open a pull request with clear description
-4. Development Director reviews and merges
-5. Azure auto-deploys on merge
+|---|---|
+| Fix typo, update date/event info | ✅ Do it |
+| Image updates, wording improvements | ✅ Do it |
+| Fix broken styles (CSS) | ✅ Do it |
+| New section, redesign, layout change | ⚠️ Draft PR / open issue first |
+| Change CSS framework, add pages, server code | 🛑 Escalate to Development Director |
