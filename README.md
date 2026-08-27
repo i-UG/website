@@ -5,7 +5,7 @@
 The official website for the UK IBM i User Group.<br><br>
 A single-page informational site covering events, news & how to get in touch.
 
-**Live site:** [i-ug.co.uk](https://i-ug.org.uk)
+**Live site:** [i-ug.co.uk](https://i-ug.co.uk)
 
 ## Tech stack
 
@@ -13,7 +13,7 @@ A single-page informational site covering events, news & how to get in touch.
 - **Tailwind CSS** for all styling
 - **Hosted on Azure Static Web Apps** (Free tier)
 - **Deployed automatically via GitHub Actions** whenever changes are merged into `main`
-- **Contact form** powered by [Formspree](https://formspree.io) (free tier) — submissions are emailed directly to the configured inbox with no backend required
+- **Contact form** powered by [Formspree](https://formspree.io) (free tier) — submissions are emailed directly to the configured inbox with no backend required.  Currently, the email addresses Andy.Youens@i-ug.co.uk & saroj.bains@i-ug.co.uk are the recipients. If this needs to change, a issue needs to be raised on gitHub.
 
 > ⚠️ **Please don't deviate from this technical foundation.** No additional pages, no alternative CSS frameworks (Bootstrap, custom stylesheets, etc.), no CMS or page builders. Any proposed change to this foundation should go through the Development Director first, separately from routine content edits.
 
@@ -39,6 +39,8 @@ A single-page informational site covering events, news & how to get in touch.
 ```
 
 ## How changes get published....
+
+Changes will only be made that have a GitHub issue raised [here](https://github.com/i-UG/website/issues).  **NO other changes will be considered or worked on.**
 
 Nobody edits the live site directly. Every change goes through a review step:
 

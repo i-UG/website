@@ -49,9 +49,10 @@
     6. #conference    — Next conference details
     7. Sponsors       — Partner/sponsor logos strip
     8. #gallery       — Featured event photos
-    9. #contact       — Contact form
-    10. <footer>      — Copyright + social links
-    11. <script>      — JavaScript for nav, form validation, etc.
+    9. #mailing-list  — Mailing list sign-up form
+    10. #contact      — Contact form
+    11. <footer>      — Copyright + social links
+    12. <script>      — JavaScript for nav, form validation, etc.
     ============================================================
 -->
 <html lang="en">
@@ -141,6 +142,8 @@
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Conference</a>
                 <a href="#gallery"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Gallery</a>
+                <a href="#mailing-list"
+                    class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Mailing List</a>
                 <a href="#contact"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
 
@@ -184,8 +187,8 @@
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Conference</a>
                 <a href="#gallery"
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Gallery</a>
-                <a href="#members"
-                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Members</a>
+                <a href="#mailing-list"
+                    class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Mailing List</a>
                 <a href="#contact"
                     class="mobile-link py-2 text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
 
@@ -724,6 +727,114 @@
         <!-- END GALLERY SECTION -->
 
         <!-- ============================================================
+             MAILING LIST SECTION  (id="mailing-list")
+             ============================================================
+             Collects name and email from visitors who want to join the
+             i-UG mailing list. Submits to Formspree via fetch().
+
+             TO UPDATE:
+             - Intro text and bullet points: edit the <p> and <ul> in
+               the left column (lg:col-span-2 div).
+             - Form fields: Name and Email only — IDs are
+               "ml-name" and "ml-email". Do not change the IDs without
+               updating the JavaScript submit handler below.
+             - Submit button label: edit "Sign me up" in the <button>.
+
+             HOW THE FORM SUBMISSION WORKS:
+             The form POSTs to Formspree (https://formspree.io/f/mvkopbno)
+             via fetch(). Submissions are forwarded to the configured inbox.
+             To change the destination email, log in to formspree.io and
+             update the form settings — no code change required.
+             ============================================================ -->
+        <section id="mailing-list" class="bg-ibm-gray py-20">
+            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+
+                <!-- Section header -->
+                <header class="mb-12 animate-fade-up">
+                    <p
+                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                        Mailing List
+                    </p>
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                        Stay up to date with i-UG
+                    </h2>
+                </header>
+
+                <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
+
+                    <!-- LEFT — mailing list description -->
+                    <div class="lg:col-span-2">
+                        <div class="border-l-2 border-ibm-blue pl-6">
+                            <!-- *** UPDATE THIS: intro paragraph *** -->
+                            <p class="text-base leading-relaxed text-ibm-carbon-light">
+                                Sign up to the i-UG mailing list to receive the latest news, event announcements &amp;
+                                community updates directly to your inbox.
+                            </p>
+                            <!-- *** UPDATE THIS: list of benefits *** -->
+                            <ul class="mt-8 space-y-4 text-sm text-ibm-carbon-light">
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>Conference and event announcements</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>IBM i news and technical updates</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                        aria-hidden="true"></span>Community news and member spotlights</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT — mailing list sign-up form -->
+                    <div class="lg:col-span-3">
+                        <form id="ml-form" noValidate
+                            class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
+                            <div class="grid grid-cols-1 gap-6">
+
+                                <!-- Name + Email fields — side by side on small+ screens -->
+                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+
+                                    <!-- Name field -->
+                                    <div class="flex flex-col gap-2">
+                                        <label for="ml-name"
+                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
+                                        <input id="ml-name" name="name" type="text" placeholder="Jane Smith"
+                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <p id="ml-error-name" class="hidden text-xs font-medium text-red-600"></p>
+                                    </div>
+
+                                    <!-- Email field -->
+                                    <div class="flex flex-col gap-2">
+                                        <label for="ml-email"
+                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Email</label>
+                                        <input id="ml-email" name="email" type="email"
+                                            placeholder="jane@company.co.uk"
+                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                        <p id="ml-error-email" class="hidden text-xs font-medium text-red-600"></p>
+                                    </div>
+                                </div>
+
+                                <!-- Hidden field so Formspree submissions are distinguishable from contact form -->
+                                <input type="hidden" name="_subject" value="i-UG Mailing List Sign-up" />
+
+                                <!-- Submit button row -->
+                                <div class="flex flex-wrap items-center gap-4">
+                                    <button id="ml-submit" type="submit"
+                                        class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                                        Sign me up
+                                    </button>
+                                    <p id="ml-status" class="hidden text-sm font-medium" role="status"></p>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- END MAILING LIST SECTION -->
+
+        <!-- ============================================================
              CONTACT SECTION  (id="contact")
              ============================================================
              Contains a short description on the left and a contact form
@@ -995,7 +1106,67 @@
             link.addEventListener("click", () => setMenuState(false));
         });
 
-        // ── 2. CONTACT FORM VALIDATION ────────────────────────────────
+        // ── 2. MAILING LIST FORM ──────────────────────────────────────
+        const mlForm = document.getElementById("ml-form");
+        const mlStatus = document.getElementById("ml-status");
+        const mlErrorName = document.getElementById("ml-error-name");
+        const mlErrorEmail = document.getElementById("ml-error-email");
+        const mlSubmit = document.getElementById("ml-submit");
+
+        mlForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("ml-name").value.trim();
+            const email = document.getElementById("ml-email").value.trim();
+
+            const nameError = name ? "" : "Please enter your name.";
+            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
+
+            // validEmail is defined in section 3 below — both handlers share it.
+            showFieldError(mlErrorName, nameError);
+            showFieldError(mlErrorEmail, emailError);
+
+            if (nameError || emailError) {
+                mlStatus.classList.add("hidden");
+                return;
+            }
+
+            mlSubmit.disabled = true;
+            mlSubmit.textContent = "Signing up...";
+
+            fetch("https://formspree.io/f/mvkopbno", {
+                method: "POST",
+                headers: { "Accept": "application/json" },
+                body: new FormData(mlForm)
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    mlForm.reset();
+                    mlStatus.textContent = "Thank you — you have been added to the mailing list.";
+                    mlStatus.className = "text-sm font-medium text-ibm-blue";
+                    mlStatus.classList.remove("hidden");
+                } else {
+                    return response.json().then(function (data) {
+                        var msg = (data.errors && data.errors.map(function (e) { return e.message; }).join(", "))
+                            || "Sorry, there was a problem signing you up. Please try again.";
+                        mlStatus.textContent = msg;
+                        mlStatus.className = "text-sm font-medium text-red-600";
+                        mlStatus.classList.remove("hidden");
+                    });
+                }
+            })
+            .catch(function () {
+                mlStatus.textContent = "Sorry, there was a network error. Please try again.";
+                mlStatus.className = "text-sm font-medium text-red-600";
+                mlStatus.classList.remove("hidden");
+            })
+            .finally(function () {
+                mlSubmit.disabled = false;
+                mlSubmit.textContent = "Sign me up";
+            });
+        });
+
+        // ── 3. CONTACT FORM VALIDATION ────────────────────────────────
         // Grab references to the contact form and its fields.
         const contactForm = document.getElementById("contact-form");
         const contactStatus = document.getElementById("contact-status");
