@@ -466,7 +466,7 @@
                         <!-- *** UPDATE THIS: one-paragraph description *** -->
                         <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/90">
                             A full day of IBM i sessions covering modernisation, security, RPG, Db2 for i and the
-                            Power roadmap, plus hands-on workshops and community networking.
+                            IBM Power roadmap, plus hands-on workshops and community networking.
                         </p>
 
                         <!-- *** UPDATE THIS: bullet-point highlights for the conference *** -->
@@ -739,10 +739,10 @@
              - Submit button label: edit "Send message" in the <button>.
 
              HOW THE FORM SUBMISSION WORKS:
-             Currently the form does not actually send an email. The
-             JavaScript shows a success message after a short delay as a
-             placeholder. To wire up a real backend you would need to
-             update the contactForm submit handler in the <script> block.
+             The form POSTs to Formspree (https://formspree.io/f/mvkopbno)
+             via fetch(). Submissions are forwarded to the configured inbox.
+             To change the destination email, log in to formspree.io and
+             update the form settings — no code change required.
              ============================================================ -->
         <section id="contact" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
@@ -1061,17 +1061,40 @@
             submitButton.disabled = true;
             submitButton.textContent = "Sending...";
 
-            // Simulate a 450ms send delay, then show a success message.
-            // TO WIRE UP A REAL BACKEND: replace this setTimeout with a
-            // fetch() POST to your API endpoint.
-            setTimeout(() => {
-                contactForm.reset();
+            // POST the form data to Formspree as JSON.
+            fetch("https://formspree.io/f/mvkopbno", {
+                method: "POST",
+                headers: { "Accept": "application/json" },
+                body: new FormData(contactForm)
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    // Success — reset the form and show a confirmation message.
+                    contactForm.reset();
+                    contactStatus.textContent = "Thank you — your message has been received.";
+                    contactStatus.className = "text-sm font-medium text-ibm-blue";
+                    contactStatus.classList.remove("hidden");
+                } else {
+                    // Formspree returned an error (e.g. endpoint misconfigured).
+                    return response.json().then(function (data) {
+                        var msg = (data.errors && data.errors.map(function (e) { return e.message; }).join(", "))
+                            || "Sorry, there was a problem sending your message. Please try again.";
+                        contactStatus.textContent = msg;
+                        contactStatus.className = "text-sm font-medium text-red-600";
+                        contactStatus.classList.remove("hidden");
+                    });
+                }
+            })
+            .catch(function () {
+                // Network failure.
+                contactStatus.textContent = "Sorry, there was a network error. Please try again.";
+                contactStatus.className = "text-sm font-medium text-red-600";
+                contactStatus.classList.remove("hidden");
+            })
+            .finally(function () {
                 submitButton.disabled = false;
                 submitButton.textContent = "Send message";
-                contactStatus.textContent = "Thank you - your message has been received.";
-                contactStatus.className = "text-sm font-medium text-ibm-blue";
-                contactStatus.classList.remove("hidden");
-            }, 450);
+            });
         });
     </script>
 </body>
