@@ -1,10 +1,10 @@
 <!doctype html>
 <!--
     ============================================================
-    i-UG Website â€” index.html
+    i-UG Website &dash; index.html
     ============================================================
     This is the ONLY HTML file for the entire website.
-    Everything visible on the site lives here â€” do not create
+    Everything visible on the site lives here &dash; do not create
     additional .html pages.
 
     TECH STACK
@@ -14,7 +14,7 @@
       Styles are applied via class names directly on HTML
       elements (e.g. class="text-lg font-bold text-blue-600").
       The compiled stylesheet lives at: assets/css/tailwind.css
-    - Vanilla JavaScript (no frameworks) â€” see the <script>
+    - Vanilla JavaScript (no frameworks) &dash; see the <script>
       block at the bottom of this file.
     - Hosted on Azure Static Web Apps, auto-deployed from GitHub.
 
@@ -41,37 +41,37 @@
 
     PAGE SECTIONS (in order)
     ------------------------
-    1. <head>         â€” Meta, fonts, stylesheet
-    2. <header>       â€” Sticky navigation bar + mobile menu
-    3. Hero section   â€” Big intro banner (no id, first <section>)
-    4. Photo strip    â€” Horizontal masonry of photos (no id)
-    5. #about         â€” About i-UG section
-    6. #conference    â€” Next conference details
-    7. Sponsors       â€” Partner/sponsor logos strip
-    8. #gallery       â€” Featured event photos
-    9. #membership    â€” Membership tiers and application form
-    10. #mailing-list â€” Mailing list sign-up form
-    11. #contact      â€” Contact form
-    11. <footer>      â€” Copyright + social links
-    12. <script>      â€” JavaScript for nav, form validation, etc.
+    1. <head>         &dash; Meta, fonts, stylesheet
+    2. <header>       &dash; Sticky navigation bar + mobile menu
+    3. Hero section   &dash; Big intro banner (no id, first <section>)
+    4. Photo strip    &dash; Horizontal masonry of photos (no id)
+    5. #about         &dash; About i-UG section
+    6. #conference    &dash; Next conference details
+    7. Sponsors       &dash; Partner/sponsor logos strip
+    8. #gallery       &dash; Featured event photos
+    9. #membership    &dash; Membership tiers and application form
+    10. #mailing-list &dash; Mailing list sign-up form
+    11. #contact      &dash; Contact form
+    11. <footer>      &dash; Copyright + social links
+    12. <script>      &dash; JavaScript for nav, form validation, etc.
     ============================================================
 -->
 <html lang="en">
 
 <!-- ============================================================
-     HEAD â€” page metadata, fonts, and stylesheet
+     HEAD &dash; page metadata, fonts, and stylesheet
      ============================================================
      This section is not visible on screen. It tells the browser
      how to display the page and which resources to load.
      ============================================================ -->
 <head>
-    <!-- Character encoding â€” always keep this as UTF-8 -->
+    <!-- Character encoding &dash; always keep this as UTF-8 -->
     <meta charset="UTF-8" />
 
     <!-- Makes the page scale correctly on phones and tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Browser tab title â€” update this if the organisation name changes -->
+    <!-- Browser tab title &dash; update this if the organisation name changes -->
     <title>i-UG - The UK IBM i User Group</title>
 
     <!-- Short description shown in Google search results (keep under ~160 characters) -->
@@ -81,11 +81,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- IBM Plex Sans â€” the brand typeface used throughout the site.
+    <!-- IBM Plex Sans &dash; the brand typeface used throughout the site.
          Weights loaded: 400 (regular), 500 (medium), 600 (semibold), 700 (bold) -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Tailwind CSS â€” the compiled stylesheet with all utility classes.
+    <!-- Tailwind CSS &dash; the compiled stylesheet with all utility classes.
          Do NOT switch this to a CDN version or a different CSS framework
          without approval from the Development Director. -->
     <link rel="stylesheet" href="./assets/css/tailwind.css" />
@@ -100,26 +100,26 @@
 </head>
 
 <!-- ============================================================
-     BODY â€” all visible page content starts here
+     BODY &dash; all visible page content starts here
      ============================================================ -->
 <body>
 
     <!-- ============================================================
          HEADER / NAVIGATION BAR
          ============================================================
-         This bar is "sticky" â€” it stays fixed to the top of the
+         This bar is "sticky" &dash; it stays fixed to the top of the
          screen while the user scrolls (class="fixed inset-x-0 top-0").
          The JavaScript at the bottom of this file makes it appear
          with a white background + shadow once the user scrolls down.
 
          To add or remove navigation links:
            - Edit both the desktop <nav> (below) AND the mobile menu
-             <div id="mobile-menu"> â€” they are separate copies.
+             <div id="mobile-menu"> &dash; they are separate copies.
          ============================================================ -->
     <header id="site-header"
         class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-white/0 transition-all duration-300">
 
-        <!-- Inner wrapper â€” limits content width to max-w-6xl and centres it -->
+        <!-- Inner wrapper &dash; limits content width to max-w-6xl and centres it -->
         <div class="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 lg:px-8">
 
             <!-- Logo + organisation name (top-left) -->
@@ -127,13 +127,13 @@
             <a href="#" class="flex items-center gap-3" aria-label="i-UG home">
                 <!-- Logo image  -->
                 <img src="./assets/logo/logo2026.png" alt="i-UG logo" class="h-10 w-20" />
-                <!-- Organisation name â€” hidden on very small screens (sm:inline shows it on small+) -->
+                <!-- Organisation name &dash; hidden on very small screens (sm:inline shows it on small+) -->
                 <span class="hidden text-sm font-medium text-ibm-carbon-light sm:inline">
                     The UK IBM i User Group
                 </span>
             </a>
 
-            <!-- â”€â”€ DESKTOP NAVIGATION (hidden on mobile â€” md:flex shows it on medium+ screens) â”€â”€ -->
+            <!-- â”€â”€ DESKTOP NAVIGATION (hidden on mobile &dash; md:flex shows it on medium+ screens) â”€â”€ -->
             <nav class="hidden items-center gap-8 md:flex" aria-label="Primary">
                 <!-- Each link uses href="#section-id" to scroll to a section on the page.
                      To add a new link: copy one of the <a> tags below and update the href and text. -->
@@ -150,14 +150,14 @@
                 <a href="#contact"
                     class="text-sm font-medium text-ibm-carbon-light transition-colors hover:text-ibm-blue">Contact</a>
 
-                <!-- "Call to action" button â€” styled differently from the plain text links above -->
+                <!-- "Call to action" button &dash; styled differently from the plain text links above -->
                 <a href="#contact"
                     class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-5 py-2.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                     Join the Community
                 </a>
             </nav>
 
-            <!-- â”€â”€ HAMBURGER BUTTON (visible on mobile only â€” md:hidden hides it on medium+ screens) â”€â”€ -->
+            <!-- â”€â”€ HAMBURGER BUTTON (visible on mobile only &dash; md:hidden hides it on medium+ screens) â”€â”€ -->
             <!-- Clicking this button opens/closes the mobile menu below.
                  The three <span> elements are the three horizontal lines of the hamburger icon.
                  JavaScript animates them into an âœ• when the menu is open. -->
@@ -214,7 +214,7 @@
     <main>
 
         <!-- ============================================================
-             HERO SECTION â€” full-width intro banner
+             HERO SECTION &dash; full-width intro banner
              ============================================================
              This is the first thing visitors see. It contains the logo,
              headline, subheadline, and two call-to-action buttons.
@@ -227,31 +227,31 @@
              ============================================================ -->
         <section class="relative overflow-hidden border-b border-gray-200 bg-white">
 
-            <!-- Decorative background grid pattern â€” purely visual, hidden from screen readers -->
+            <!-- Decorative background grid pattern &dash; purely visual, hidden from screen readers -->
             <div class="ibm-grid absolute inset-0" aria-hidden="true"></div>
-            <!-- Decorative diagonal overlay â€” purely visual, hidden from screen readers -->
+            <!-- Decorative diagonal overlay &dash; purely visual, hidden from screen readers -->
             <div class="ibm-diagonal absolute inset-0" aria-hidden="true"></div>
             <!-- Blue vertical accent bar on the left edge of the section -->
             <div class="absolute left-0 top-0 h-full w-1.5 bg-ibm-blue" aria-hidden="true"></div>
 
-            <!-- Content container â€” centred, max width 6xl -->
+            <!-- Content container &dash; centred, max width 6xl -->
             <div class="relative mx-auto w-full max-w-6xl px-6 lg:px-8">
                 <div class="flex flex-col justify-center py-28 sm:py-36">
 
-                    <!-- Hero logo â€” larger version displayed above the headline -->
+                    <!-- Hero logo &dash; larger version displayed above the headline -->
                     <div style="max-width:220px;" class="mb-8">
                         <img src="./assets/logo/logo2026.png" alt="i-UG logo"
                             class="animate-fade-in" style="width:100%;height:auto;" />
                     </div>
 
-                    <!-- Eyebrow label â€” the small text + line above the main headline -->
+                    <!-- Eyebrow label &dash; the small text + line above the main headline -->
                     <p
                         class="mb-5 flex items-center gap-3 text-sm font-semibold tracking-widest text-ibm-blue animate-fade-in">
                         <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                         The UKs Largest IBM i User Group in the UK
                     </p>
 
-                    <!-- Main headline â€” the largest text on the page -->
+                    <!-- Main headline &dash; the largest text on the page -->
                     <h1
                         class="max-w-4xl text-4xl font-semibold leading-[1.1] tracking-tight text-ibm-carbon animate-fade-up sm:text-5xl lg:text-6xl">
                         i-UG - The UK IBM i User Group
@@ -264,12 +264,12 @@
 
                     <!-- Call-to-action buttons -->
                     <div class="mt-10 flex flex-wrap items-center gap-4 animate-fade-up">
-                        <!-- Primary CTA â€” solid blue button, scrolls to #contact -->
+                        <!-- Primary CTA &dash; solid blue button, scrolls to #contact -->
                         <a href="#contact"
                             class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                             Join the Community
                         </a>
-                        <!-- Secondary CTA â€” outline button, scrolls to #about -->
+                        <!-- Secondary CTA &dash; outline button, scrolls to #about -->
                         <a href="#about"
                             class="inline-flex items-center justify-center gap-2 rounded-md border border-ibm-carbon bg-transparent px-6 py-3.5 text-sm font-medium tracking-wide text-ibm-carbon transition-all duration-200 hover:bg-ibm-carbon hover:text-white">
                             Learn more
@@ -281,7 +281,7 @@
         <!-- END HERO SECTION -->
 
         <!-- ============================================================
-             PHOTO STRIP â€” masonry-style collage of event photos
+             PHOTO STRIP &dash; masonry-style collage of event photos
              ============================================================
              A grid of photos displayed in a Pinterest-style masonry
              layout. Columns increase as screen width grows:
@@ -306,7 +306,7 @@
                  across two columns. -->
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
 
-                <!-- Photo 1 â€” replace src and alt to update this image -->
+                <!-- Photo 1 &dash; replace src and alt to update this image -->
                 <div class="break-inside-avoid"><img src="./assets/images/photo1.jpeg" alt="Photo 1"
                         class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
 
@@ -361,7 +361,7 @@
         <section id="about" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
 
-                <!-- Section header â€” eyebrow label + heading -->
+                <!-- Section header &dash; eyebrow label + heading -->
                 <header class="mb-12 animate-fade-up">
                     <p
                         class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
@@ -377,7 +377,7 @@
                 <!-- Two-column grid (stacks to single column on mobile) -->
                 <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
 
-                    <!-- LEFT COLUMN â€” organisation overview paragraphs -->
+                    <!-- LEFT COLUMN &dash; organisation overview paragraphs -->
                     <!-- The blue left border (border-l-2 border-ibm-blue) is a visual accent -->
                     <div class="animate-slide-in border-l-2 border-ibm-blue pl-6">
                         <p class="text-base leading-relaxed text-ibm-carbon-light">
@@ -392,7 +392,7 @@
                         </p>
                     </div>
 
-                    <!-- RIGHT COLUMN â€” mission statement + stat highlights -->
+                    <!-- RIGHT COLUMN &dash; mission statement + stat highlights -->
                     <div class="animate-slide-in border-l-2 border-gray-200 pl-6">
                         <h3 class="text-lg font-semibold text-ibm-carbon">Our mission</h3>
                         <p class="mt-3 text-base leading-relaxed text-ibm-carbon-light">
@@ -404,7 +404,7 @@
                         <!-- Statistics / highlights displayed in a 3-column row.
                              <dl> = description list, <dt> = term, <dd> = definition -->
                         <dl class="mt-8 grid grid-cols-3 gap-4 border-t border-gray-200 pt-6">
-                            <!-- Stat 1 â€” update the <dt> text to change the headline value -->
+                            <!-- Stat 1 &dash; update the <dt> text to change the headline value -->
                             <div>
                                 <dt class="text-2xl font-semibold text-ibm-blue">UK-wide</dt>
                                 <dd class="mt-1 text-xs uppercase tracking-wider text-ibm-carbon-light">Regional reach
@@ -451,7 +451,7 @@
         <section id="conference" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
 
-                <!-- Conference card â€” solid IBM blue background -->
+                <!-- Conference card &dash; solid IBM blue background -->
                 <div class="relative overflow-hidden bg-ibm-blue text-white shadow-sm">
 
                     <!-- Decorative diagonal pattern on top of the blue background -->
@@ -499,7 +499,7 @@
                             <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FPkPbFxqlUW43fkga1MrqEcutWqI6iZDhfUNSleLPw1UNlcwTlhMOUs2WEMyNFQ3NTcxWDIzUDVVOS4u&amp;origin=Invitation&amp;channel=0"
                                 target="_blank" rel="noopener"
                                 class="inline-flex items-center gap-2 rounded-md border border-white/50 bg-white/10 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white/20">
-                                ðŸ“¢ Call for Papers â€” Submit your session proposal
+                                ðŸ“¢ Call for Papers &dash; Submit your session proposal
                             </a>
                         </div>
 
@@ -517,7 +517,7 @@
                             </div>
                         </dl>
 
-                        <!-- Register button â€” currently a plain button (no link).
+                        <!-- Register button &dash; currently a plain button (no link).
                              When registration opens, replace this <button> with:
                              <a href="YOUR_REGISTRATION_URL" target="_blank" rel="noopener"
                                 class="inline-flex items-center justify-center rounded-md bg-white
@@ -533,11 +533,11 @@
                     </div>
                 </div>
 
-                <!-- Venue map â€” OpenStreetMap embed, no API key required -->
+                <!-- Venue map &dash; OpenStreetMap embed, no API key required -->
                 <div class="mt-6 overflow-hidden shadow-sm">
                     <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Venue Map</p>
                     <iframe
-                        title="The Mount Hotel, Wolverhampton â€” venue map"
+                        title="The Mount Hotel, Wolverhampton &dash; venue map"
                         src="https://www.openstreetmap.org/export/embed.html?bbox=-2.1568%2C52.5935%2C-2.1268%2C52.6085&amp;layer=mapnik&amp;marker=52.6010%2C-2.1418"
                         width="100%"
                         height="280"
@@ -562,7 +562,7 @@
              SPONSORS / PARTNERS STRIP
              ============================================================
              A grid of sponsor and partner names. Currently displayed as
-             text â€” replace with <img> tags if you have logo files.
+             text &dash; replace with <img> tags if you have logo files.
 
              TO ADD A SPONSOR:
              1. Copy one of the <li> blocks below.
@@ -579,7 +579,7 @@
         <section aria-label="Sponsors and partners" class="border-y border-gray-200 bg-ibm-gray">
             <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8">
 
-                <!-- Section label â€” centred, with decorative lines either side -->
+                <!-- Section label &dash; centred, with decorative lines either side -->
                 <p
                     class="mb-8 flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
@@ -587,7 +587,7 @@
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                 </p>
 
-                <!-- Sponsor list â€” add/remove <li> items here -->
+                <!-- Sponsor list &dash; add/remove <li> items here -->
                 <ul class="grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
                     <!-- Sponsor: IBM -->
                     <li
@@ -896,7 +896,7 @@
              TO UPDATE:
              - Intro text and bullet points: edit the <p> and <ul> in
                the left column (lg:col-span-2 div).
-             - Form fields: Name and Email only â€” IDs are
+             - Form fields: Name and Email only &dash; IDs are
                "ml-name" and "ml-email". Do not change the IDs without
                updating the JavaScript submit handler below.
              - Submit button label: edit "Sign me up" in the <button>.
@@ -905,7 +905,7 @@
              The form POSTs to Formspree (https://formspree.io/f/mvkopbno)
              via fetch(). Submissions are forwarded to the configured inbox.
              To change the destination email, log in to formspree.io and
-             update the form settings â€” no code change required.
+             update the form settings &dash; no code change required.
              ============================================================ -->
         <section id="mailing-list" class="bg-ibm-gray py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
@@ -925,7 +925,7 @@
                 <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
                 <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
 
-                    <!-- LEFT â€” mailing list description -->
+                    <!-- LEFT &dash; mailing list description -->
                     <div class="lg:col-span-2">
                         <div class="border-l-2 border-ibm-blue pl-6">
                             <!-- *** UPDATE THIS: intro paragraph *** -->
@@ -945,13 +945,13 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT â€” mailing list sign-up form -->
+                    <!-- RIGHT &dash; mailing list sign-up form -->
                     <div class="lg:col-span-3">
                         <form id="ml-form" noValidate
                             class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
                             <div class="grid grid-cols-1 gap-6">
 
-                                <!-- Name + Email fields â€” side by side on small+ screens -->
+                                <!-- Name + Email fields &dash; side by side on small+ screens -->
                                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
                                     <!-- Name field -->
@@ -1006,7 +1006,7 @@
              - Intro text and bullet points: edit the <p> and <ul> in the
                left column (lg:col-span-2 div).
              - Form fields: the three inputs are Name, Email, and Message.
-               Do not change the id="contact-name/email/message" values â€”
+               Do not change the id="contact-name/email/message" values &dash;
                the JavaScript references them by those IDs.
              - Submit button label: edit "Send message" in the <button>.
 
@@ -1014,7 +1014,7 @@
              The form POSTs to Formspree (https://formspree.io/f/mvkopbno)
              via fetch(). Submissions are forwarded to the configured inbox.
              To change the destination email, log in to formspree.io and
-             update the form settings â€” no code change required.
+             update the form settings &dash; no code change required.
              ============================================================ -->
         <section id="contact" class="bg-white py-20">
             <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
@@ -1034,7 +1034,7 @@
                 <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
                 <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
 
-                    <!-- LEFT â€” contact description and enquiry types -->
+                    <!-- LEFT &dash; contact description and enquiry types -->
                     <div class="lg:col-span-2">
                         <div class="border-l-2 border-ibm-blue pl-6">
                             <!-- *** UPDATE THIS: intro paragraph *** -->
@@ -1055,7 +1055,7 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT â€” contact form -->
+                    <!-- RIGHT &dash; contact form -->
                     <div class="lg:col-span-3">
                         <!-- noValidate disables the browser's built-in validation so our
                              custom JavaScript validation (below) runs instead -->
@@ -1063,7 +1063,7 @@
                             class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
                             <div class="grid grid-cols-1 gap-6">
 
-                                <!-- Name + Email fields â€” side by side on small+ screens -->
+                                <!-- Name + Email fields &dash; side by side on small+ screens -->
                                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
                                     <!-- Name field -->
@@ -1073,7 +1073,7 @@
                                             class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
                                         <input id="contact-name" name="name" type="text" placeholder="Jane Smith"
                                             class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
-                                        <!-- Error message â€” hidden by default, shown by JavaScript on validation failure -->
+                                        <!-- Error message &dash; hidden by default, shown by JavaScript on validation failure -->
                                         <p id="error-name" class="hidden text-xs font-medium text-red-600"></p>
                                     </div>
 
@@ -1084,12 +1084,12 @@
                                         <input id="contact-email" name="email" type="email"
                                             placeholder="jane@company.co.uk"
                                             class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
-                                        <!-- Error message â€” hidden by default -->
+                                        <!-- Error message &dash; hidden by default -->
                                         <p id="error-email" class="hidden text-xs font-medium text-red-600"></p>
                                     </div>
                                 </div>
 
-                                <!-- Message textarea â€” full width -->
+                                <!-- Message textarea &dash; full width -->
                                 <div class="flex flex-col gap-2">
                                     <label for="contact-message"
                                         class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Message</label>
@@ -1097,7 +1097,7 @@
                                     <textarea id="contact-message" name="message" rows="5"
                                         placeholder="Tell us how you'd like to get involved with i-UG..."
                                         class="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue"></textarea>
-                                    <!-- Error message â€” hidden by default -->
+                                    <!-- Error message &dash; hidden by default -->
                                     <p id="error-message" class="hidden text-xs font-medium text-red-600"></p>
                                 </div>
 
@@ -1107,7 +1107,7 @@
                                         class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
                                         Send message
                                     </button>
-                                    <!-- Status message â€” hidden until form is submitted.
+                                    <!-- Status message &dash; hidden until form is submitted.
                                          JavaScript writes "Thank youâ€¦" into this element on success. -->
                                     <p id="contact-status" class="hidden text-sm font-medium" role="status"></p>
                                 </div>
@@ -1138,7 +1138,7 @@
            and update the href and link text.
          ============================================================ -->
     <footer class="border-t border-gray-800 bg-ibm-carbon text-gray-300">
-        <!-- Inner wrapper â€” side-by-side layout on small+ screens -->
+        <!-- Inner wrapper &dash; side-by-side layout on small+ screens -->
         <div
             class="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 lg:px-8 sm:flex-row sm:items-center">
 
@@ -1168,9 +1168,9 @@
          JAVASCRIPT
          ============================================================
          This script block handles three things:
-           1. Sticky header â€” adds a background/shadow when scrolling
-           2. Mobile menu   â€” open/close the hamburger menu
-           3. Contact form  â€” client-side validation before submit
+           1. Sticky header &dash; adds a background/shadow when scrolling
+           2. Mobile menu   &dash; open/close the hamburger menu
+           3. Contact form  &dash; client-side validation before submit
 
          There are no external JavaScript libraries used here.
          Everything is plain ("vanilla") JavaScript.
@@ -1196,7 +1196,7 @@
         let menuOpen = false;
 
         /**
-         * applyHeaderState â€” called on every scroll event.
+         * applyHeaderState &dash; called on every scroll event.
          * When the user has scrolled more than 8px from the top, give the header
          * a white background and a subtle shadow so it doesn't blend into the page.
          * When the user is at the very top, make it transparent again.
@@ -1212,7 +1212,7 @@
         }
 
         /**
-         * setMenuState â€” opens or closes the mobile menu.
+         * setMenuState &dash; opens or closes the mobile menu.
          * @param {boolean} open  Pass true to open, false to close.
          *
          * When open:
@@ -1283,7 +1283,7 @@
             const nameError = name ? "" : "Please enter your name.";
             const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
 
-            // validEmail is defined in section 3 below â€” both handlers share it.
+            // validEmail is defined in section 3 below &dash; both handlers share it.
             showFieldError(mlErrorName, nameError);
             showFieldError(mlErrorEmail, emailError);
 
@@ -1303,7 +1303,7 @@
             .then(function (response) {
                 if (response.ok) {
                     mlForm.reset();
-                    mlStatus.textContent = "Thank you â€” you have been added to the mailing list.";
+                    mlStatus.textContent = "Thank you &dash; you have been added to the mailing list.";
                     mlStatus.className = "text-sm font-medium text-ibm-blue";
                     mlStatus.classList.remove("hidden");
                 } else {
@@ -1365,7 +1365,7 @@
             .then(function (response) {
                 if (response.ok) {
                     memForm.reset();
-                    memStatus.textContent = "Thank you â€” your application has been received. We will be in touch shortly.";
+                    memStatus.textContent = "Thank you &dash; your application has been received. We will be in touch shortly.";
                     memStatus.className = "text-sm font-medium text-ibm-blue";
                     memStatus.classList.remove("hidden");
                 } else {
@@ -1399,13 +1399,13 @@
         const submitButton = document.getElementById("contact-submit");
 
         /**
-         * showFieldError â€” shows or hides an inline error message under a field.
+         * showFieldError &dash; shows or hides an inline error message under a field.
          * @param {HTMLElement} element  The <p> error element below the field.
          * @param {string}      message  The error text. Pass "" to clear/hide it.
          */
         function showFieldError(element, message) {
             if (!message) {
-                // Empty message means no error â€” hide the element.
+                // Empty message means no error &dash; hide the element.
                 element.classList.add("hidden");
                 element.textContent = "";
                 return;
@@ -1416,7 +1416,7 @@
         }
 
         /**
-         * validEmail â€” quick check that an email looks roughly valid.
+         * validEmail &dash; quick check that an email looks roughly valid.
          * Uses a simple regex: something@something.something
          * @param {string} email
          * @returns {boolean}
@@ -1451,7 +1451,7 @@
                 return;
             }
 
-            // All fields are valid â€” disable the button and show a sending state.
+            // All fields are valid &dash; disable the button and show a sending state.
             submitButton.disabled = true;
             submitButton.textContent = "Sending...";
 
@@ -1463,9 +1463,9 @@
             })
             .then(function (response) {
                 if (response.ok) {
-                    // Success â€” reset the form and show a confirmation message.
+                    // Success &dash; reset the form and show a confirmation message.
                     contactForm.reset();
-                    contactStatus.textContent = "Thank you â€” your message has been received.";
+                    contactStatus.textContent = "Thank you &dash; your message has been received.";
                     contactStatus.className = "text-sm font-medium text-ibm-blue";
                     contactStatus.classList.remove("hidden");
                 } else {
