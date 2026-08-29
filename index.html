@@ -157,7 +157,7 @@
                 </a>
             </nav>
 
-            <!-- â”€â”€ HAMBURGER BUTTON (visible on mobile only &dash; md:hidden hides it on medium+ screens) â”€â”€ -->
+            <!-- HAMBURGER BUTTON (visible on mobile only &dash; md:hidden hides it on medium+ screens)  -->
             <!-- Clicking this button opens/closes the mobile menu below.
                  The three <span> elements are the three horizontal lines of the hamburger icon.
                  JavaScript animates them into an âœ• when the menu is open. -->
@@ -766,10 +766,24 @@
                 <!-- Membership tier cards -->
                 <div class="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3">
 
-                    <!-- Individual membership -->
+                    <!-- Associate membership -->
+                    <div class="border border-gray-200 bg-ibm-gray p-8">
+                        <p class="mb-1 text-sm font-semibold uppercase tracking-widest text-ibm-blue">Associate</p>
+                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;30 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
+                        <div class="border-t border-gray-200 pt-4">
+                            <ul class="space-y-3 text-sm text-ibm-carbon-light">
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Full access to all i-UG conferences and events</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Access to presentation materials and recordings</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Regular newsletter and community updates</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Networking with IBM i professionals</li>
+                            </ul>
+                        </div>
+                    </div>
+
+<!-- Individual membership -->
                     <div class="border border-gray-200 bg-ibm-gray p-8">
                         <p class="mb-1 text-sm font-semibold uppercase tracking-widest text-ibm-blue">Individual</p>
-                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;30 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
+                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;200 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
                         <div class="border-t border-gray-200 pt-4">
                             <ul class="space-y-3 text-sm text-ibm-carbon-light">
                                 <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Full access to all i-UG conferences and events</li>
@@ -783,7 +797,7 @@
                     <!-- Company membership -->
                     <div class="border-2 border-ibm-blue bg-ibm-gray p-8">
                         <p class="mb-1 text-sm font-semibold uppercase tracking-widest text-ibm-blue">Company</p>
-                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;150 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
+                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;400 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
                         <div class="border-t border-gray-200 pt-4">
                             <ul class="space-y-3 text-sm text-ibm-carbon-light">
                                 <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Up to 5 named individuals from your organisation</li>
@@ -797,7 +811,21 @@
                     <!-- Vendor membership -->
                     <div class="border border-gray-200 bg-ibm-gray p-8">
                         <p class="mb-1 text-sm font-semibold uppercase tracking-widest text-ibm-blue">Vendor</p>
-                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;500 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
+                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;600 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
+                        <div class="border-t border-gray-200 pt-4">
+                            <ul class="space-y-3 text-sm text-ibm-carbon-light">
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>All Company membership benefits</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Logo and link displayed on the i-UG website</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Exhibitor space at the annual conference</li>
+                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>Speaking slot opportunity at events</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Educational membership -->
+                    <div class="border border-gray-200 bg-ibm-gray p-8">
+                        <p class="mb-1 text-sm font-semibold uppercase tracking-widest text-ibm-blue">Educational</p>
+                        <p class="mb-4 text-3xl font-semibold text-ibm-carbon">&pound;5,000 <span class="text-base font-normal text-ibm-carbon-light">ex VAT / year</span></p>
                         <div class="border-t border-gray-200 pt-4">
                             <ul class="space-y-3 text-sm text-ibm-carbon-light">
                                 <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue" aria-hidden="true"></span>All Company membership benefits</li>
@@ -862,9 +890,11 @@
                                 <select id="mem-type" name="membership_type" required
                                     class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon focus:border-ibm-blue focus:outline-none">
                                     <option value=""> Please select ...</option>
-                                    <option value="Individual">Individual &pound;30 ex VAT / year</option>
-                                    <option value="Company">Company &pound;150 ex VAT / year</option>
-                                    <option value="Vendor">Vendor &pound;500 ex VAT / year</option>
+                                    <option value="Associate">Associate &pound;30 ex VAT / year</option>
+                                    <option value="Individual">Individual &pound;200 ex VAT / year</option>
+                                    <option value="Company">Company &pound;400 ex VAT / year</option>
+                                    <option value="Vendor">Vendor &pound;600 ex VAT / year</option>
+                                    <option value="Educational">Educational &pound;5,000 ex VAT / year</option>
                                 </select>
                             </div>
 
