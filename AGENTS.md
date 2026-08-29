@@ -37,9 +37,9 @@ The desktop `<nav>` (line ~135) and `<div id="mobile-menu">` (line ~177) are **s
 
 Mobile nav links need `class="mobile-link"` — JavaScript uses this selector to close the menu on tap.
 
-## Contact Form is a Simulation
+## Contact Form — Web3Forms
 
-The form (`id="contact-form"`) does **not** submit to any backend. The submit handler fakes a 450ms delay and shows a success message. To wire up a real endpoint, replace the `setTimeout` in the `<script>` block with a `fetch()` POST.
+The form (`id="contact-form"`) POSTs to **Web3Forms** (`https://api.web3forms.com/submit`), which forwards submissions to an email address. The `access_key` field in the `fetch` body (in the `<script>` block) is a **routing key, not a secret** — it is safe to commit. Replace `YOUR_ACCESS_KEY_HERE` with the key obtained at [web3forms.com](https://web3forms.com).
 
 ## Image Naming Convention
 
