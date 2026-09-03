@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--
     ============================================================
     i-UG Website - index.html
@@ -27,7 +27,7 @@
     - Dates/locations for the conference: search for the section
       with id="conference" below.
     - Sponsor/partner names: search for the section with
-      aria-label="Sponsors and partners" below.
+      aria-label="Media partner" below.
     - Social media links: find the <footer> at the bottom.
 
     COLOUR VARIABLES (defined in tailwind.css)
@@ -570,88 +570,29 @@
         <!-- END CONFERENCE SECTION -->
 
         <!-- ============================================================
-             SPONSORS / PARTNERS STRIP
+             MEDIA PARTNER STRIP
              ============================================================
-             A grid of sponsor and partner names. Currently displayed as
-             text &dash; replace with <img> tags if you have logo files.
-
-             TO ADD A SPONSOR:
-             1. Copy one of the <li> blocks below.
-             2. Update the text inside it to the new sponsor's name.
-             3. If you have a logo image, replace the text with:
-                <img src="./assets/images/sponsor-name.png"
-                     alt="Sponsor Name logo" class="max-h-10 w-auto" />
-
-             TO REMOVE A SPONSOR: delete its <li> block.
-
-             The grid automatically adjusts columns:
-               2 cols on mobile â†’ 3 on sm â†’ 6 on large screens.
+             Displays the PowerWire media partner logo, linked to
+             https://powerwire.uk. Logo file: assets/vendors/PowerWire-iUG.png
              ============================================================ -->
-        <section aria-label="Sponsors and partners" class="border-y border-gray-200 bg-ibm-gray">
-            <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8">
+        <section aria-label="Media partner" class="border-y border-gray-200 bg-ibm-gray">
+            <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8 flex flex-col items-center gap-6">
 
                 <!-- Section label &dash; centred, with decorative lines either side -->
                 <p
-                    class="mb-8 flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
+                    class="flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
-                    Supported by our partners &amp; sponsors
+                    Supported by our media partner PowerWire
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                 </p>
 
-                <!-- Sponsor list &dash; add/remove <li> items here -->
-                <ul class="grid grid-cols-2 items-center gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
-                    <!-- Sponsor: IBM -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        IBM</li>
-                    <!-- Sponsor: Arcad -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Arcad</li>
-                    <!-- Sponsor: MKT Computers -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        MKT Computers</li>
-                    <!-- Sponsor: Fresche Solutions -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Fresche Solutions</li>
-                    <!-- Sponsor: Proximity -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Proximity</li>
-                    <!-- Sponsor: Service Express -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Service Express</li>
-                    <!-- Sponsor: PowerWire -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        PowerWire</li>
-                    <!-- Sponsor: Rowton IT -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Rowton IT</li>
-                    <!-- Sponsor: Celerity -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Celerity</li>
-                    <!-- Sponsor: Shield -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Shield</li>
-                    <!-- Sponsor: Meridian IT -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        Meridian IT</li>
-                    <!-- Sponsor: FalconStor -->
-                    <li
-                        class="flex items-center justify-center text-center text-base font-semibold tracking-tight text-ibm-carbon-light transition-all duration-300 hover:text-ibm-carbon">
-                        FalconStor</li>
-                </ul>
+                <!-- PowerWire logo -->
+                <a href="https://powerwire.uk" target="_blank" rel="noopener noreferrer">
+                    <img src="./assets/vendors/PowerWire-iUG.png" alt="PowerWire logo" class="max-h-12 w-auto" />
+                </a>
             </div>
         </section>
-        <!-- END SPONSORS STRIP -->
+        <!-- END MEDIA PARTNER STRIP -->
 
         <!-- ============================================================
              GALLERY SECTION  (id="gallery")
