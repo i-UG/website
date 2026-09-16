@@ -3,9 +3,11 @@
     ".avif": "image/avif"
   },
   "navigationFallback": {
+    "rewrite": "/index.html",
     "exclude": [
       "/assets/images/_source/",
       "/assets/vendors/_source/"
     ]
   }
 }
+
