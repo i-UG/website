@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Source images not deployed
+assets/images/_source/
+assets/vendors/_source/

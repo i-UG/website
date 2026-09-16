@@ -1,0 +1,11 @@
+{
+  "mimeTypes": {
+    ".avif": "image/avif"
+  },
+  "navigationFallback": {
+    "exclude": [
+      "/assets/images/_source/",
+      "/assets/vendors/_source/"
+    ]
+  }
+}
