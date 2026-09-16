@@ -304,69 +304,102 @@
         </section>
         <!-- END HERO SECTION -->
 
-        <!-- ============================================================
-             PHOTO STRIP — masonry-style collage of event photos
-             ============================================================
-             A grid of photos displayed in a Pinterest-style masonry
-             layout. Columns increase as screen width grows:
-               1 column on mobile → 2 on sm → 3 on md → 4 on lg
-
-             TO ADD OR REPLACE A PHOTO:
-             1. Copy a new image into assets/images/ (JPEG recommended,
-                keep file size under ~300 KB for fast loading).
-             2. Duplicate one of the <div class="break-inside-avoid">
-                blocks below.
-             3. Update the src="..." and alt="..." attributes.
-
-             The alt text should briefly describe what is in the image
-             (important for accessibility and screen readers).
-
-             NOTE: photos are numbered photo1.jpeg through photo9.jpeg.
-             The gallery section further down uses photo10–photo12.jpeg.
-             ============================================================ -->
         <section class="bg-white px-4 py-10">
-            <!-- "columns-..." is a CSS multi-column layout.
-                 "break-inside-avoid" prevents an image from being split
-                 across two columns. -->
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
 
-                <!-- Photo 1 — replace src and alt to update this image -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo1.jpeg" alt="Photo 1"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <!-- Photo 1 -->
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo1.avif" type="image/avif">
+                        <source srcset="./assets/images/photo1.webp" type="image/webp">
+                        <img src="./assets/images/photo1.jpeg" alt="Photo 1"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 2 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo2.jpeg" alt="Photo 2"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo2.avif" type="image/avif">
+                        <source srcset="./assets/images/photo2.webp" type="image/webp">
+                        <img src="./assets/images/photo2.jpeg" alt="Photo 2"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 3 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo3.jpeg" alt="Photo 3"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo3.avif" type="image/avif">
+                        <source srcset="./assets/images/photo3.webp" type="image/webp">
+                        <img src="./assets/images/photo3.jpeg" alt="Photo 3"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 4 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo4.jpeg" alt="Photo 4"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo4.avif" type="image/avif">
+                        <source srcset="./assets/images/photo4.webp" type="image/webp">
+                        <img src="./assets/images/photo4.jpeg" alt="Photo 4"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 5 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo5.jpeg" alt="Photo 5"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo5.avif" type="image/avif">
+                        <source srcset="./assets/images/photo5.webp" type="image/webp">
+                        <img src="./assets/images/photo5.jpeg" alt="Photo 5"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 6 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo6.jpeg" alt="Photo 6"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo6.avif" type="image/avif">
+                        <source srcset="./assets/images/photo6.webp" type="image/webp">
+                        <img src="./assets/images/photo6.jpeg" alt="Photo 6"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 7 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo7.jpeg" alt="Photo 7"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo7.avif" type="image/avif">
+                        <source srcset="./assets/images/photo7.webp" type="image/webp">
+                        <img src="./assets/images/photo7.jpeg" alt="Photo 7"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 8 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo8.jpeg" alt="Photo 8"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo8.avif" type="image/avif">
+                        <source srcset="./assets/images/photo8.webp" type="image/webp">
+                        <img src="./assets/images/photo8.jpeg" alt="Photo 8"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
 
                 <!-- Photo 9 -->
-                <div class="break-inside-avoid"><img src="./assets/images/photo9.jpeg" alt="Photo 9"
-                        class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105" /></div>
+                <div class="break-inside-avoid">
+                    <picture>
+                        <source srcset="./assets/images/photo9.avif" type="image/avif">
+                        <source srcset="./assets/images/photo9.webp" type="image/webp">
+                        <img src="./assets/images/photo9.jpeg" alt="Photo 9"
+                            class="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                    </picture>
+                </div>
+
             </div>
         </section>
+
         <!-- END PHOTO STRIP -->
 
         <!-- ============================================================
@@ -632,10 +665,11 @@
              Displays the PowerWire media partner logo, linked to
              https://powerwire.uk. Logo file: assets/vendors/PowerWire-iUG.png
              ============================================================ -->
+
         <section aria-label="Media partner" class="border-y border-gray-200 bg-ibm-gray">
             <div class="mx-auto w-full max-w-6xl px-6 py-12 lg:px-8 flex flex-col items-center gap-6">
 
-                <!-- Section label — centred, with decorative lines either side -->
+                <!-- Section label -->
                 <p
                     class="flex items-center justify-center gap-3 text-center text-xs font-semibold uppercase tracking-widest text-ibm-carbon-light">
                     <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
@@ -645,10 +679,17 @@
 
                 <!-- PowerWire logo -->
                 <a href="https://powerwire.uk" target="_blank" rel="noopener noreferrer">
-                    <img src="./assets/vendors/PowerWire-iUG.png" alt="PowerWire logo" class="max-h-12 w-auto" />
+                    <picture>
+                        <source srcset="./assets/vendors/PowerWire.avif" type="image/avif">
+                        <source srcset="./assets/vendors/PowerWire.webp" type="image/webp">
+                        <img src="./assets/vendors/PowerWire.png" alt="PowerWire logo" class="max-h-12 w-auto">
+                    </picture>
                 </a>
+
             </div>
         </section>
+        <!-- END MEDIA PARTNER STRIP -->
+
         <!-- END MEDIA PARTNER STRIP -->
 
         <!-- ============================================================
@@ -688,21 +729,19 @@
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
                     <!-- Gallery image 1 -->
-                    <!-- "group" on the <figure> allows the image inside to zoom on hover
-                         (group-hover:scale-105 on the <img>) -->
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
-                        <!-- aspect-[4/3] locks the image to a 4:3 ratio to keep the grid uniform -->
                         <div class="relative aspect-[4/3] overflow-hidden">
-                            <img src="./assets/images/photo11.jpeg"
-                                alt="Speaker delivering a keynote at an i-UG conference"
-                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                            <picture>
+                                <source srcset="./assets/images/photo11.avif" type="image/avif">
+                                <source srcset="./assets/images/photo11.webp" type="image/webp">
+                                <img src="./assets/images/photo11.jpeg"
+                                    alt="Speaker delivering a keynote at an i-UG conference"
+                                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105">
+                            </picture>
                         </div>
-                        <!-- Caption bar below the image -->
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
-                            <!-- *** UPDATE THIS: photo caption *** -->
                             <span class="text-sm font-medium text-ibm-carbon">Annual Conference - Keynote</span>
-                            <!-- Decorative blue line on the right of the caption -->
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
@@ -711,11 +750,15 @@
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
                         <div class="relative aspect-[4/3] overflow-hidden">
-                            <img src="./assets/images/photo10.jpeg" alt="Members networking at an i-UG community event"
-                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
+                            <picture>
+                                <source srcset="./assets/images/photo10.avif" type="image/avif">
+                                <source srcset="./assets/images/photo10.webp" type="image/webp">
+                                <img src="./assets/images/photo10.jpeg"
+                                    alt="Members networking at an i-UG community event"
+                                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105">
+                            </picture>
                         </div>
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
-                            <!-- *** UPDATE THIS: photo caption *** -->
                             <span class="text-sm font-medium text-ibm-carbon">Community Networking</span>
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
@@ -725,19 +768,17 @@
                     <figure
                         class="group relative overflow-hidden border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-xl">
                         <div class="relative aspect-[4/3] overflow-hidden">
-                            <img src="./assets/images/photo12.jpeg"
-                                alt="Developers collaborating in an IBM i technical workshop"
-                                class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" />
-                        </div>
-                        <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
-                            <!-- *** UPDATE THIS: photo caption *** -->
-                            <span class="text-sm font-medium text-ibm-carbon">Technical Workshop</span>
-                            <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
-                        </figcaption>
-                    </figure>
+                            <picture>
+                                <source srcset="./assets/images/photo12.avif" type="image/avif">
+                                <source srcset="./assets/images/photo12.webp" type="image/webp">
+                                <img src="./assets/images/photo12.jpeg"
+                                    alt="Developers collaborating in an IBM i technical workshop"
+                                    class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105">
+                            </picture>
 
+
+                        </div>
                 </div>
-            </div>
         </section>
         <!-- END GALLERY SECTION -->
 
@@ -1122,15 +1163,18 @@
                     <div class="mx-auto mt-4 h-1 w-16 bg-ibm-blue"></div>
                 </div>
 
-                <!-- Vendor logo grid -->
                 <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
 
                     <!-- ARCAD -->
                     <a href="https://www.arcadsoftware.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="ARCAD Software">
-                        <img src="assets/vendors/Arcad.png" alt="ARCAD Software logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Arcad.avif" type="image/avif">
+                            <source srcset="assets/vendors/Arcad.webp" type="image/webp">
+                            <img src="assets/vendors/Arcad.png" alt="ARCAD Software logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">ARCAD Software</span>
                     </a>
 
@@ -1139,8 +1183,12 @@
                         rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Ariadne Software">
-                        <img src="assets/vendors/Ariadne.jpg" alt="Ariadne Software logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Ariadne.avif" type="image/avif">
+                            <source srcset="assets/vendors/Ariadne.webp" type="image/webp">
+                            <img src="assets/vendors/Ariadne.jpg" alt="Ariadne Software logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Ariadne Software</span>
                     </a>
 
@@ -1148,17 +1196,25 @@
                     <a href="https://babyblueit.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Baby Blue IT & Consulting">
-                        <img src="assets/vendors/babyblue.jpg" alt="Baby Blue IT & Consulting logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/babyblue.avif" type="image/avif">
+                            <source srcset="assets/vendors/babyblue.webp" type="image/webp">
+                            <img src="assets/vendors/babyblue.jpg" alt="Baby Blue IT & Consulting logo"
+                                class="h-18 w-full" style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Baby Blue IT</span>
                     </a>
 
                     <!-- Celerity -->
-                    <a href="https://celerity-uk.com/" target="_blank" rel="noopener noreferrer" <div
+                    <a href="https://celerity-uk.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
                         title="Celerity">
-                        <img src="assets/vendors/Celerity.jpg" alt="Celerity logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Celerity.avif" type="image/avif">
+                            <source srcset="assets/vendors/Celerity.webp" type="image/webp">
+                            <img src="assets/vendors/Celerity.jpg" alt="Celerity logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Celerity</span>
                     </a>
 
@@ -1166,8 +1222,12 @@
                     <a href="https://contenlo.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Contenlo Consulting">
-                        <img src="assets/vendors/Contenlo.jpg" alt="Contenlo Consulting logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Contenlo.avif" type="image/avif">
+                            <source srcset="assets/vendors/Contenlo.webp" type="image/webp">
+                            <img src="assets/vendors/Contenlo.jpg" alt="Contenlo Consulting logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Contenlo Consulting</span>
                     </a>
 
@@ -1175,8 +1235,12 @@
                     <a href="https://covenco.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Covenco">
-                        <img src="assets/vendors/Covenco.jpg" alt="Covenco logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Covenco.avif" type="image/avif">
+                            <source srcset="assets/vendors/Covenco.webp" type="image/webp">
+                            <img src="assets/vendors/Covenco.jpg" alt="Covenco logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Covenco</span>
                     </a>
 
@@ -1184,8 +1248,12 @@
                     <a href="https://digitalspace.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Digital Space Group">
-                        <img src="assets/vendors/digitalspace.jpg" alt="Digital Space Group logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/digitalspace.avif" type="image/avif">
+                            <source srcset="assets/vendors/digitalspace.webp" type="image/webp">
+                            <img src="assets/vendors/digitalspace.jpg" alt="Digital Space Group logo"
+                                class="h-18 w-full" style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Digital Space Group</span>
                     </a>
 
@@ -1193,8 +1261,12 @@
                     <a href="https://www.dynamicsolutions.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Dynamic Solutions">
-                        <img src="assets/vendors/DynamicSolutions.jpg" alt="Dynamic Solutions logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/DynamicSolutions.avif" type="image/avif">
+                            <source srcset="assets/vendors/DynamicSolutions.webp" type="image/webp">
+                            <img src="assets/vendors/DynamicSolutions.jpg" alt="Dynamic Solutions logo"
+                                class="h-18 w-full" style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Dynamic Solutions</span>
                     </a>
 
@@ -1202,16 +1274,24 @@
                     <a href="https://www.falconstor.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="FalconStor Software">
-                        <img src="assets/vendors/Falconstor.jpg" alt="FalconStor Software logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Falconstor.avif" type="image/avif">
+                            <source srcset="assets/vendors/Falconstor.webp" type="image/webp">
+                            <img src="assets/vendors/Falconstor.jpg" alt="FalconStor Software logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">FalconStor Software</span>
                     </a>
 
                     <!-- Fortra International -->
                     <div class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm"
                         title="Fortra International">
-                        <img src="assets/vendors/Fortra.jpg" alt="Fortra International logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Fortra.avif" type="image/avif">
+                            <source srcset="assets/vendors/Fortra.webp" type="image/webp">
+                            <img src="assets/vendors/Fortra.jpg" alt="Fortra International logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Fortra International</span>
                     </div>
 
@@ -1219,8 +1299,12 @@
                     <a href="https://freschesolutions.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Fresche Solutions">
-                        <img src="assets/vendors/Fresche.jpg" alt="Fresche Solutions logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Fresche.avif" type="image/avif">
+                            <source srcset="assets/vendors/Fresche.webp" type="image/webp">
+                            <img src="assets/vendors/Fresche.jpg" alt="Fresche Solutions logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Fresche Solutions</span>
                     </a>
 
@@ -1228,17 +1312,25 @@
                     <a href="https://www.frontline-consultancy.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Frontline Consultancy">
-                        <img src="assets/vendors/frontline.jpg" alt="Frontline Consultancy logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/frontline.avif" type="image/avif">
+                            <source srcset="assets/vendors/frontline.webp" type="image/webp">
+                            <img src="assets/vendors/frontline.jpg" alt="Frontline Consultancy logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Frontline Consultancy</span>
                     </a>
 
-                    <!-- Integrated Management Solutions -->
+                    <!-- IMS -->
                     <a href="https://www.imsolutions.info/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Integrated Management Solutions">
-                        <img src="assets/vendors/IMS.jpg" alt="Integrated Management Solutions logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/IMS.avif" type="image/avif">
+                            <source srcset="assets/vendors/IMS.webp" type="image/webp">
+                            <img src="assets/vendors/IMS.jpg" alt="Integrated Management Solutions logo"
+                                class="h-18 w-full" style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">IMS</span>
                     </a>
 
@@ -1246,8 +1338,12 @@
                     <a href="https://www.kfa.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="KFA">
-                        <img src="assets/vendors/KFA.jpg" alt="KFA logo" class="h-18 w-full" style="object-fit:contain"
-                            loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/KFA.avif" type="image/avif">
+                            <source srcset="assets/vendors/KFA.webp" type="image/webp">
+                            <img src="assets/vendors/KFA.jpg" alt="KFA logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">KFA</span>
                     </a>
 
@@ -1255,8 +1351,12 @@
                     <a href="https://www.logicmate.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Logicmate">
-                        <img src="assets/vendors/logicmate.jpg" alt="Logicmate logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/logicmate.avif" type="image/avif">
+                            <source srcset="assets/vendors/logicmate.webp" type="image/webp">
+                            <img src="assets/vendors/logicmate.jpg" alt="Logicmate logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Logicmate</span>
                     </a>
 
@@ -1264,8 +1364,12 @@
                     <a href="https://www.m81.eu/home_/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="M81">
-                        <img src="assets/vendors/M81.jpg" alt="M81 logo" class="h-18 w-full" style="object-fit:contain"
-                            loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/M81.avif" type="image/avif">
+                            <source srcset="assets/vendors/M81.webp" type="image/webp">
+                            <img src="assets/vendors/M81.jpg" alt="M81 logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">M81</span>
                     </a>
 
@@ -1273,17 +1377,25 @@
                     <a href="https://www.softlanding.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Macro4 / Softlanding">
-                        <img src="assets/vendors/Softlanding.jpg" alt="Softlanding logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Softlanding.avif" type="image/avif">
+                            <source srcset="assets/vendors/Softlanding.webp" type="image/webp">
+                            <img src="assets/vendors/Softlanding.jpg" alt="Softlanding logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Macro4 / Softlanding</span>
                     </a>
 
-                    <!-- Maximum Availability (Maxava) -->
+                    <!-- Maximum Availability -->
                     <a href="https://www.maxava.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Maximum Availability">
-                        <img src="assets/vendors/maxava.jpg" alt="Maxava logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/maxava.avif" type="image/avif">
+                            <source srcset="assets/vendors/maxava.webp" type="image/webp">
+                            <img src="assets/vendors/maxava.jpg" alt="Maxava logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Maximum Availability</span>
                     </a>
 
@@ -1291,8 +1403,12 @@
                     <a href="https://www.meridianit.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Meridian IT">
-                        <img src="assets/vendors/meridian.jpg" alt="Meridian IT logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/meridian.avif" type="image/avif">
+                            <source srcset="assets/vendors/meridian.webp" type="image/webp">
+                            <img src="assets/vendors/meridian.jpg" alt="Meridian IT logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Meridian IT</span>
                     </a>
 
@@ -1300,8 +1416,12 @@
                     <a href="https://www.mkt-computers.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="MKT Computers">
-                        <img src="assets/vendors/MKT.jpg" alt="MKT Computers logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/MKT.avif" type="image/avif">
+                            <source srcset="assets/vendors/MKT.webp" type="image/webp">
+                            <img src="assets/vendors/MKT.jpg" alt="MKT Computers logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">MKT Computers</span>
                     </a>
 
@@ -1309,8 +1429,12 @@
                     <a href="https://www.nemo-itsolutions.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Nemo IT Solutions">
-                        <img src="assets/vendors/Nemo.jpg" alt="Nemo IT Solutions logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Nemo.avif" type="image/avif">
+                            <source srcset="assets/vendors/Nemo.webp" type="image/webp">
+                            <img src="assets/vendors/Nemo.jpg" alt="Nemo IT Solutions logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Nemo IT Solutions</span>
                     </a>
 
@@ -1318,8 +1442,12 @@
                     <a href="https://www.northdoor.co.uk/partners/ibm/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Northdoor">
-                        <img src="assets/vendors/northdoor.jpg" alt="Northdoor logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/northdoor.avif" type="image/avif">
+                            <source srcset="assets/vendors/northdoor.webp" type="image/webp">
+                            <img src="assets/vendors/northdoor.jpg" alt="Northdoor logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Northdoor</span>
                     </a>
 
@@ -1327,8 +1455,12 @@
                     <a href="https://www.precisely.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Precisely">
-                        <img src="assets/vendors/Precisely.jpg" alt="Precisely logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Precisely.avif" type="image/avif">
+                            <source srcset="assets/vendors/Precisely.webp" type="image/webp">
+                            <img src="assets/vendors/Precisely.jpg" alt="Precisely logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Precisely</span>
                     </a>
 
@@ -1336,8 +1468,12 @@
                     <a href="https://proximity.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Proximity Resourcing">
-                        <img src="assets/vendors/Proximity.jpg" alt="Proximity Resourcing logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Proximity.avif" type="image/avif">
+                            <source srcset="assets/vendors/Proximity.webp" type="image/webp">
+                            <img src="assets/vendors/Proximity.jpg" alt="Proximity Resourcing logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Proximity Resourcing</span>
                     </a>
 
@@ -1345,8 +1481,12 @@
                     <a href="https://recarta.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Recarta IT">
-                        <img src="assets/vendors/recarta.jpg" alt="Recarta IT logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/recarta.avif" type="image/avif">
+                            <source srcset="assets/vendors/recarta.webp" type="image/webp">
+                            <img src="assets/vendors/recarta.jpg" alt="Recarta IT logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Recarta IT</span>
                     </a>
 
@@ -1354,8 +1494,12 @@
                     <a href="https://remainsoftware.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Remain Software">
-                        <img src="assets/vendors/Remain.jpg" alt="Remain Software logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Remain.avif" type="image/avif">
+                            <source srcset="assets/vendors/Remain.webp" type="image/webp">
+                            <img src="assets/vendors/Remain.jpg" alt="Remain Software logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Remain Software</span>
                     </a>
 
@@ -1363,8 +1507,12 @@
                     <a href="https://www.rowtonit.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Rowton IT">
-                        <img src="assets/vendors/Rowton.jpg" alt="Rowton IT logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Rowton.avif" type="image/avif">
+                            <source srcset="assets/vendors/Rowton.webp" type="image/webp">
+                            <img src="assets/vendors/Rowton.jpg" alt="Rowton IT logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Rowton IT</span>
                     </a>
 
@@ -1372,8 +1520,12 @@
                     <a href="https://serviceexpress.com/uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Park Lane Group">
-                        <img src="assets/vendors/se.jpg" alt="Park Lane Group logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/se.avif" type="image/avif">
+                            <source srcset="assets/vendors/se.webp" type="image/webp">
+                            <img src="assets/vendors/se.jpg" alt="Park Lane Group logo" class="h-18 w-full"
+                                style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Park Lane Group</span>
                     </a>
 
@@ -1381,19 +1533,18 @@
                     <a href="https://www.shieldadvanced.com/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
                         title="Shield Advanced Solutions">
-                        <img src="assets/vendors/Shield.jpg" alt="Shield Advanced Solutions logo" class="h-18 w-full"
-                            style="object-fit:contain" loading="lazy" />
+                        <picture>
+                            <source srcset="assets/vendors/Shield.avif" type="image/avif">
+                            <source srcset="assets/vendors/Shield.webp" type="image/webp">
+                            <img src="assets/vendors/Shield.jpg" alt="Shield Advanced Solutions logo"
+                                class="h-18 w-full" style="object-fit:contain" loading="lazy">
+                        </picture>
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">Shield Advanced Solutions</span>
                     </a>
 
-                </div>
-                <!-- End vendor logo grid -->
+                    <!-- END VENDOR MEMBERS SECTION -->
 
-            </div>
-        </section>
-        <!-- END VENDOR MEMBERS SECTION -->
-
-        <!-- ============================================================
+                    <!-- ============================================================
              CONTACT SECTION  (id="contact")
              ============================================================
              Contains a short description on the left and a contact form
@@ -1414,110 +1565,120 @@
              To change the destination email, log in to formspree.io and
              update the form settings — no code change required.
              ============================================================ -->
-        <section id="contact" class="bg-white py-20">
-            <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
+                    <section id="contact" class="bg-white py-20">
+                        <div class="mx-auto w-full max-w-6xl px-6 lg:px-8">
 
-                <!-- Section header -->
-                <header class="mb-12 animate-fade-up">
-                    <p
-                        class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
-                        <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
-                        Contact Us
-                    </p>
-                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
-                        Get in touch with i-UG
-                    </h2>
-                </header>
+                            <!-- Section header -->
+                            <header class="mb-12 animate-fade-up">
+                                <p
+                                    class="mb-3 flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-ibm-blue">
+                                    <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
+                                    Contact Us
+                                </p>
+                                <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                                    Get in touch with i-UG
+                                </h2>
+                            </header>
 
-                <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
-                <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
+                            <!-- 5-column grid: left 2 cols = description, right 3 cols = form -->
+                            <div class="grid grid-cols-1 gap-12 lg:grid-cols-5">
 
-                    <!-- LEFT — contact description and enquiry types -->
-                    <div class="lg:col-span-2">
-                        <div class="border-l-2 border-ibm-blue pl-6">
-                            <!-- *** UPDATE THIS: intro paragraph *** -->
-                            <p class="text-base leading-relaxed text-ibm-carbon-light">
-                                Whether you want to join the community, speak at an event, or partner with us, we would
-                                love to hear from you. Complete the form and a member of the i-UG team will be in touch.
-                            </p>
-                            <!-- *** UPDATE THIS: list of enquiry types *** -->
-                            <ul class="mt-8 space-y-4 text-sm text-ibm-carbon-light">
-                                <!-- Each <li> has a short blue dash (the <span>) as a bullet point -->
-                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
-                                        aria-hidden="true"></span>Membership and community enquiries</li>
-                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
-                                        aria-hidden="true"></span>Speaking and event opportunities</li>
-                                <li class="flex items-start gap-3"><span class="mt-1 h-px w-6 flex-none bg-ibm-blue"
-                                        aria-hidden="true"></span>Partnership and sponsorship</li>
-                            </ul>
-                        </div>
-                    </div>
+                                <!-- LEFT — contact description and enquiry types -->
+                                <div class="lg:col-span-2">
+                                    <div class="border-l-2 border-ibm-blue pl-6">
+                                        <!-- *** UPDATE THIS: intro paragraph *** -->
+                                        <p class="text-base leading-relaxed text-ibm-carbon-light">
+                                            Whether you want to join the community, speak at an event, or partner with
+                                            us, we would
+                                            love to hear from you. Complete the form and a member of the i-UG team will
+                                            be in touch.
+                                        </p>
+                                        <!-- *** UPDATE THIS: list of enquiry types *** -->
+                                        <ul class="mt-8 space-y-4 text-sm text-ibm-carbon-light">
+                                            <!-- Each <li> has a short blue dash (the <span>) as a bullet point -->
+                                            <li class="flex items-start gap-3"><span
+                                                    class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                                    aria-hidden="true"></span>Membership and community enquiries</li>
+                                            <li class="flex items-start gap-3"><span
+                                                    class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                                    aria-hidden="true"></span>Speaking and event opportunities</li>
+                                            <li class="flex items-start gap-3"><span
+                                                    class="mt-1 h-px w-6 flex-none bg-ibm-blue"
+                                                    aria-hidden="true"></span>Partnership and sponsorship</li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-                    <!-- RIGHT — contact form -->
-                    <div class="lg:col-span-3">
-                        <!-- noValidate disables the browser's built-in validation so our
+                                <!-- RIGHT — contact form -->
+                                <div class="lg:col-span-3">
+                                    <!-- noValidate disables the browser's built-in validation so our
                              custom JavaScript validation (below) runs instead -->
-                        <form id="contact-form" noValidate
-                            class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
-                            <div class="grid grid-cols-1 gap-6">
+                                    <form id="contact-form" noValidate
+                                        class="border border-gray-200 bg-white p-8 shadow-sm sm:p-10">
+                                        <div class="grid grid-cols-1 gap-6">
 
-                                <!-- Name + Email fields — side by side on small+ screens -->
-                                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                                            <!-- Name + Email fields — side by side on small+ screens -->
+                                            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
-                                    <!-- Name field -->
-                                    <div class="flex flex-col gap-2">
-                                        <!-- for="contact-name" links this label to the input below -->
-                                        <label for="contact-name"
-                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
-                                        <input id="contact-name" name="name" type="text" placeholder="Jane Smith"
-                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
-                                        <!-- Error message — hidden by default, shown by JavaScript on validation failure -->
-                                        <p id="error-name" class="hidden text-xs font-medium text-red-600"></p>
-                                    </div>
+                                                <!-- Name field -->
+                                                <div class="flex flex-col gap-2">
+                                                    <!-- for="contact-name" links this label to the input below -->
+                                                    <label for="contact-name"
+                                                        class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Name</label>
+                                                    <input id="contact-name" name="name" type="text"
+                                                        placeholder="Jane Smith"
+                                                        class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                                    <!-- Error message — hidden by default, shown by JavaScript on validation failure -->
+                                                    <p id="error-name" class="hidden text-xs font-medium text-red-600">
+                                                    </p>
+                                                </div>
 
-                                    <!-- Email field -->
-                                    <div class="flex flex-col gap-2">
-                                        <label for="contact-email"
-                                            class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Email</label>
-                                        <input id="contact-email" name="email" type="email"
-                                            placeholder="jane@company.co.uk"
-                                            class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
-                                        <!-- Error message — hidden by default -->
-                                        <p id="error-email" class="hidden text-xs font-medium text-red-600"></p>
-                                    </div>
-                                </div>
+                                                <!-- Email field -->
+                                                <div class="flex flex-col gap-2">
+                                                    <label for="contact-email"
+                                                        class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Email</label>
+                                                    <input id="contact-email" name="email" type="email"
+                                                        placeholder="jane@company.co.uk"
+                                                        class="w-full border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue" />
+                                                    <!-- Error message — hidden by default -->
+                                                    <p id="error-email" class="hidden text-xs font-medium text-red-600">
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                <!-- Message textarea — full width -->
-                                <div class="flex flex-col gap-2">
-                                    <label for="contact-message"
-                                        class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Message</label>
-                                    <!-- rows="5" sets the visible height of the text area -->
-                                    <textarea id="contact-message" name="message" rows="5"
-                                        placeholder="Tell us how you'd like to get involved with i-UG..."
-                                        class="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue"></textarea>
-                                    <!-- Error message — hidden by default -->
-                                    <p id="error-message" class="hidden text-xs font-medium text-red-600"></p>
-                                </div>
+                                            <!-- Message textarea — full width -->
+                                            <div class="flex flex-col gap-2">
+                                                <label for="contact-message"
+                                                    class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Message</label>
+                                                <!-- rows="5" sets the visible height of the text area -->
+                                                <textarea id="contact-message" name="message" rows="5"
+                                                    placeholder="Tell us how you'd like to get involved with i-UG..."
+                                                    class="w-full resize-none border border-gray-300 bg-white px-4 py-3 text-sm text-ibm-carbon placeholder:text-gray-400 transition-colors focus:border-ibm-blue focus:outline-none focus:ring-1 focus:ring-ibm-blue"></textarea>
+                                                <!-- Error message — hidden by default -->
+                                                <p id="error-message" class="hidden text-xs font-medium text-red-600">
+                                                </p>
+                                            </div>
 
-                                <!-- Submit button row -->
-                                <div class="flex flex-wrap items-center gap-4">
-                                    <button id="contact-submit" type="submit"
-                                        class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
-                                        Send message
-                                    </button>
-                                    <!-- Status message — hidden until form is submitted.
+                                            <!-- Submit button row -->
+                                            <div class="flex flex-wrap items-center gap-4">
+                                                <button id="contact-submit" type="submit"
+                                                    class="inline-flex items-center justify-center gap-2 rounded-md bg-ibm-blue px-6 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-ibm-blue-dark">
+                                                    Send message
+                                                </button>
+                                                <!-- Status message — hidden until form is submitted.
                                          JavaScript writes "Thank you…" into this element on success. -->
-                                    <p id="contact-status" class="hidden text-sm font-medium" role="status"></p>
+                                                <p id="contact-status" class="hidden text-sm font-medium" role="status">
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                    </form>
                                 </div>
 
                             </div>
-                        </form>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!-- END CONTACT SECTION -->
+                        </div>
+                    </section>
+                    <!-- END CONTACT SECTION -->
 
     </main>
     <!-- END MAIN CONTENT -->
