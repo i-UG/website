@@ -642,6 +642,7 @@
                     </div>
                 </div>
 
+
                 <!-- Venue map — OpenStreetMap embed, no API key required -->
                 <div class="mt-6 overflow-hidden shadow-sm">
                     <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">Venue Map</p>
@@ -655,6 +656,58 @@
                         <a href="https://www.openstreetmap.org/?mlat=52.6010&amp;mlon=-2.1418#map=15/52.6010/-2.1418"
                             target="_blank" rel="noopener" class="underline hover:text-ibm-blue">View larger map</a>
                     </p>
+                </div>
+
+                <!-- Future Events card -->
+                <div class="mt-6 rounded-lg border border-gray-200 bg-ibm-gray p-8">
+
+                    <!-- Header row: calendar icon + label -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="text-ibm-blue flex-none" aria-hidden="true">
+                            <rect width="18" height="18" x="3" y="4" rx="2" />
+                            <path d="M16 2v4M8 2v4M3 10h18" />
+                        </svg>
+                        <p class="text-sm font-semibold uppercase tracking-widest text-ibm-carbon-light">
+                            Future Events
+                        </p>
+                    </div>
+
+                    <!-- Event rows -->
+                    <ul class="space-y-3">
+
+                        <!-- i-UG North -->
+                        <li class="flex items-start gap-4 rounded-md bg-white border-l-2 border-ibm-blue pl-6 py-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-ibm-blue flex-none mt-1" aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">
+                                    Wednesday 03 February 2027</p>
+                                <p class="mt-1 text-base font-semibold text-ibm-carbon">i-UG North</p>
+                            </div>
+                        </li>
+
+                        <!-- i-UG South -->
+                        <li class="flex items-start gap-4 rounded-md bg-white border-l-2 border-ibm-blue pl-6 py-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="text-ibm-blue flex-none mt-1" aria-hidden="true">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div>
+                                <p class="text-xs font-semibold uppercase tracking-wider text-ibm-carbon-light">Thursday
+                                    25 March 2027</p>
+                                <p class="mt-1 text-base font-semibold text-ibm-carbon">i-UG South</p>
+                            </div>
+                        </li>
+
+                    </ul>
                 </div>
 
             </div>
@@ -690,8 +743,6 @@
 
             </div>
         </section>
-        <!-- END MEDIA PARTNER STRIP -->
-
         <!-- END MEDIA PARTNER STRIP -->
 
         <!-- ============================================================
@@ -743,7 +794,7 @@
                             </picture>
                         </div>
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
-                            <span class="text-sm font-medium text-ibm-carbon">Annual Conference - Keynote</span>
+                            <span class="text-sm font-medium text-ibm-carbon">Inspiring Keynotes</span>
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
@@ -761,7 +812,7 @@
                             </picture>
                         </div>
                         <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
-                            <span class="text-sm font-medium text-ibm-carbon">Community Networking</span>
+                            <span class="text-sm font-medium text-ibm-carbon">Moments of Connection</span>
                             <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
                         </figcaption>
                     </figure>
@@ -777,9 +828,11 @@
                                     alt="Developers collaborating in an IBM i technical workshop"
                                     class="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105">
                             </picture>
-
-
                         </div>
+                        <figcaption class="flex items-center justify-between border-t border-gray-200 px-4 py-3">
+                            <span class="text-sm font-medium text-ibm-carbon">Collaboration in Action</span>
+                            <span class="h-px w-6 bg-ibm-blue" aria-hidden="true"></span>
+                        </figcaption>
                 </div>
         </section>
         <!-- END GALLERY SECTION -->
@@ -800,16 +853,18 @@
                         <span class="h-px w-8 bg-ibm-blue" aria-hidden="true"></span>
                         Join Us
                     </p>
-                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl">
+                    <h2 class="max-w-3xl text-3xl font-semibold leading-tight text-ibm-carbon sm:text-4xl mt-5 mb-5">
                         Membership of the i-UG
                     </h2>
-                    <p class="mt-4 max-w-3xl text-base leading-relaxed text-ibm-carbon-light">
-                        i-UG now welcomes members from everywhere. Previously our membership was exclusively made up of
+                    <p class="mt-5 max-w-3xl text-base leading-relaxed text-ibm-carbon-light">
+                        i-UG now welcomes members from everywhere!</p>
+                    <p class="mt-5 max-w-3xl text-base leading-relaxed text-ibm-carbon-light">Previously our membership
+                        was exclusively made up of
                         IBM i IT professionals, but to fit in with our policy of trying to expand awareness of IBM i and
                         its renowned scalability, robustness, openness and security, we are opening up membership to
                         education institutions and the general public.
                     </p>
-                    <p class="mt-4 max-w-3xl text-base leading-relaxed text-ibm-carbon-light">
+                    <p class="mt-5 max-w-3xl text-base leading-relaxed text-ibm-carbon-light">
                         We encourage any individual, company, university or college interested in finding out more about
                         the fantastic IBM i operating system to become an i-UG member and attend our conferences.
                     </p>
