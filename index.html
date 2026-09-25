@@ -306,32 +306,36 @@
         </section>
         <!-- END HERO SECTION -->
 
-        <!-- TICKER / ANNOUNCEMENT BAR -->
-        <section id="ticker-section" class="bg-ibm-blue border-b border-white/20 py-3" aria-label="Announcements">
-            <div class="mx-auto flex max-w-6xl items-center gap-3 px-6 lg:px-8">
-                <!-- "Latest" badge -->
-                <span class="rounded bg-white text-xs font-semibold text-ibm-blue" style="flex-shrink:0;padding:0.125rem 0.5rem;">Latest</span>
+        <!-- ANNOUNCEMENTS CARD GRID -->
+        <section id="ticker-section" class="border-b border-gray-200 bg-ibm-gray" aria-label="Announcements">
+            <div class="mx-auto max-w-6xl px-6 lg:px-8" style="padding-top:1.25rem;padding-bottom:1.25rem;">
 
-                <!-- Rotating content -->
-                <div id="ticker-card" class="flex items-center gap-2" style="min-width:0;flex:1;transition:opacity 0.5s;"
-                     role="status">
-                    <span id="ticker-icon" class="text-xl" style="flex-shrink:0;" aria-hidden="true"></span>
-                    <span id="ticker-text" class="text-sm font-medium text-white/90" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" aria-live="polite" aria-atomic="true"></span>
+                <!-- Header row: "Latest" label + dismiss -->
+                <div class="flex items-center justify-between" style="margin-bottom:0.875rem;">
+                    <div class="flex items-center gap-3">
+                        <span class="rounded bg-ibm-blue text-xs font-semibold text-white" style="padding:0.2rem 0.6rem;">Latest</span>
+                        <span class="text-sm font-semibold text-ibm-carbon tracking-wide">Announcements</span>
+                    </div>
+                    <button id="ticker-dismiss"
+                            class="rounded text-ibm-carbon-light focus-visible:ring-2 focus-visible:ring-ibm-blue focus-visible:ring-offset-2"
+                            style="display:inline-flex;align-items:center;gap:0.3rem;padding:0.25rem 0.6rem;background:transparent;border:1px solid #d1d5db;cursor:pointer;font-size:0.75rem;transition:background 0.15s,color 0.15s;"
+                            aria-label="Hide announcements"
+                            title="Hide announcements">
+                        <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Hide
+                    </button>
                 </div>
 
-                <!-- Dismiss button -->
-                <button id="ticker-dismiss"
-                        class="rounded-full text-white/80 focus-visible:ring-2 focus-visible:ring-ibm-blue focus-visible:ring-offset-2"
-                        style="flex-shrink:0;margin-left:auto;width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.15);border:none;cursor:pointer;transition:background 0.2s;"
-                        aria-label="Hide announcements"
-                        title="Hide announcements">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                        <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
-                    </svg>
-                </button>
+                <!-- Card grid — populated by JS -->
+                <div id="ticker-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-live="polite">
+                    <!-- Cards injected here by initTicker() -->
+                </div>
+
             </div>
         </section>
-        <!-- END TICKER / ANNOUNCEMENT BAR -->
+        <!-- END ANNOUNCEMENTS CARD GRID -->
 
         <section class="bg-white px-4 py-10">
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
@@ -2135,88 +2139,92 @@
         });
 
     /* =================================================================
-       TICKER — messages loaded from assets/announcements.json
-       To update announcements, edit that file — no JS changes needed.
+       ANNOUNCEMENTS — messages loaded from assets/announcements.json
+       To add/edit/remove announcements, edit that file only.
        JSON format: [{ "text": "...", "icon": "emoji", "url": "https://..." }]
-       icon and url are optional.
+       icon and url are both optional.
     ================================================================= */
     (function initTicker() {
-        const section  = document.getElementById('ticker-section');
-        const card     = document.getElementById('ticker-card');
-        const iconEl   = document.getElementById('ticker-icon');
-        const textEl   = document.getElementById('ticker-text');
-        const dismiss  = document.getElementById('ticker-dismiss');
-        if (!section || !card || !iconEl || !textEl) return;
+        const section = document.getElementById('ticker-section');
+        const grid    = document.getElementById('ticker-cards-grid');
+        const dismiss = document.getElementById('ticker-dismiss');
+        if (!section || !grid) return;
 
-        let messages = [];
-        let current  = 0;
-        let paused   = false;
-        let timer    = null;
+        // Build one card element per announcement
+        function buildCard(msg) {
+            const card = document.createElement('div');
+            card.style.cssText = 'background:#fff;border:1px solid #e5e7eb;border-radius:0.5rem;padding:1rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);transition:box-shadow 0.2s,transform 0.2s;';
 
-        function renderTicker(index) {
-            const msg = messages[index];
+            // Top row: icon + text
+            const top = document.createElement('div');
+            top.style.cssText = 'display:flex;align-items:flex-start;gap:0.625rem;';
 
-            // Icon slot
-            iconEl.textContent = msg.icon || '';
-            iconEl.style.display = msg.icon ? '' : 'none';
-
-            // Text / link slot — clear and rebuild
-            textEl.innerHTML = '';
-            if (msg.url) {
-                const a = document.createElement('a');
-                a.href = msg.url;
-                a.textContent = msg.text;
-                a.target = '_blank';
-                a.rel = 'noopener noreferrer';
-                a.style.cssText = 'color:inherit;cursor:pointer;text-decoration-line:underline;text-underline-offset:2px;';
-                textEl.appendChild(a);
-            } else {
-                textEl.textContent = msg.text;
+            if (msg.icon) {
+                const icon = document.createElement('span');
+                icon.textContent = msg.icon;
+                icon.setAttribute('aria-hidden', 'true');
+                icon.style.cssText = 'font-size:1.375rem;line-height:1;flex-shrink:0;margin-top:0.1rem;';
+                top.appendChild(icon);
             }
-        }
 
-        function advance() {
-            if (paused || messages.length < 2) return;
-            card.style.opacity = '0';
-            setTimeout(function () {
-                current = (current + 1) % messages.length;
-                renderTicker(current);
-                card.style.opacity = '1';
-            }, 500);
-        }
+            const body = document.createElement('div');
+            body.style.cssText = 'flex:1;min-width:0;';
 
-        function startTimer() {
-            if (timer) clearInterval(timer);
-            timer = setInterval(advance, 4000);
+            const text = document.createElement('p');
+            text.style.cssText = 'font-size:0.9rem;font-weight:500;color:#393939;line-height:1.4;margin:0;';
+            text.textContent = msg.text;
+            body.appendChild(text);
+            top.appendChild(body);
+            card.appendChild(top);
+
+            // CTA link at bottom if url present
+            if (msg.url) {
+                const cta = document.createElement('a');
+                cta.href = msg.url;
+                cta.target = '_blank';
+                cta.rel = 'noopener noreferrer';
+                cta.textContent = 'Find out more →';
+                cta.style.cssText = 'display:inline-block;font-size:0.8rem;font-weight:600;color:#0f62fe;text-decoration:none;margin-top:0.25rem;';
+                cta.addEventListener('mouseenter', function () { cta.style.textDecorationLine = 'underline'; });
+                cta.addEventListener('mouseleave', function () { cta.style.textDecorationLine = 'none'; });
+                card.appendChild(cta);
+            }
+
+            // Hover lift
+            card.addEventListener('mouseenter', function () {
+                card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)';
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', function () {
+                card.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.05)';
+                card.style.transform = 'translateY(0)';
+            });
+
+            return card;
         }
 
         function boot(msgs) {
-            messages = msgs;
-            if (messages.length === 0) { section.style.display = 'none'; return; }
-            renderTicker(0);
-            if (messages.length > 1) startTimer();
+            if (msgs.length === 0) { section.style.display = 'none'; return; }
 
-            // Pause on hover
-            section.addEventListener('mouseenter', function () { paused = true; });
-            section.addEventListener('mouseleave', function () { paused = false; });
+            msgs.forEach(function (msg) { grid.appendChild(buildCard(msg)); });
 
             // Dismiss
             if (dismiss) {
                 dismiss.addEventListener('click', function () {
                     section.style.display = 'none';
-                    if (timer) clearInterval(timer);
                 });
-                // Hover highlight on dismiss button
                 dismiss.addEventListener('mouseenter', function () {
-                    dismiss.style.background = 'rgba(255,255,255,0.28)';
+                    dismiss.style.background = '#f3f4f6';
+                    dismiss.style.color = '#393939';
                 });
                 dismiss.addEventListener('mouseleave', function () {
-                    dismiss.style.background = 'rgba(255,255,255,0.15)';
+                    dismiss.style.background = 'transparent';
+                    dismiss.style.color = '';
                 });
             }
         }
 
-        // Fetch messages from JSON; fall back gracefully on any error
+        // Fetch from JSON; hide section gracefully on any error
         fetch('assets/announcements.json')
             .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
             .then(function (data) { boot(Array.isArray(data) ? data : []); })
