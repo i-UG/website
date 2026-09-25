@@ -306,6 +306,18 @@
         </section>
         <!-- END HERO SECTION -->
 
+        <!-- TICKER / ANNOUNCEMENT BAR -->
+        <section class="border-b border-gray-200 bg-ibm-gray py-3" aria-label="Announcements">
+            <div class="mx-auto flex max-w-6xl items-center gap-3 px-6 lg:px-8">
+                <span class="rounded bg-ibm-blue text-xs font-semibold text-white" style="flex-shrink:0;padding:0.125rem 0.5rem;">Latest</span>
+                <div id="ticker-card" class="flex items-center gap-2" style="min-width:0;transition:opacity 0.5s;">
+                    <span id="ticker-icon" class="text-xl" style="flex-shrink:0;" aria-hidden="true"></span>
+                    <span id="ticker-text" class="text-sm font-medium text-ibm-carbon" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" aria-live="polite" aria-atomic="true"></span>
+                </div>
+            </div>
+        </section>
+        <!-- END TICKER / ANNOUNCEMENT BAR -->
+
         <section class="bg-white px-4 py-10">
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
 
@@ -2106,6 +2118,63 @@
                     submitButton.textContent = "Send message";
                 });
         });
+
+    /* =================================================================
+       TICKER MESSAGES — edit here to update announcements
+       Each entry: { text: "...", icon: "emoji", url: "https://..." }
+       - icon and url are optional; remove either key to omit it.
+       - url opens in a new tab.
+    ================================================================= */
+    const tickerMessages = [
+        { text: "Registration now open", url: "https://www.i-ug.co.uk/#contact", icon: "🔔" },
+        { text: "Call for speakers closes Friday", url: "https://www.i-ug.co.uk/#contact", icon: "🎤" },
+        { text: "New workshop added: Modern RPG", url: "https://www.i-ug.co.uk/#conference", icon: "🛠️" }
+    ];
+
+    (function initTicker() {
+        const card = document.getElementById('ticker-card');
+        const iconEl = document.getElementById('ticker-icon');
+        const textEl = document.getElementById('ticker-text');
+        if (!card || !iconEl || !textEl || tickerMessages.length === 0) return;
+
+        let current = 0;
+
+        function renderTicker(index) {
+            const msg = tickerMessages[index];
+
+            // Icon slot
+            iconEl.textContent = msg.icon || '';
+            iconEl.style.display = msg.icon ? '' : 'none';
+
+            // Text / link slot — clear and rebuild
+            textEl.innerHTML = '';
+            if (msg.url) {
+                const a = document.createElement('a');
+                a.href = msg.url;
+                a.textContent = msg.text;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                a.className = 'text-ibm-carbon';
+                a.style.cssText = 'cursor:pointer;text-decoration-line:underline;text-underline-offset:2px;';
+                textEl.appendChild(a);
+            } else {
+                textEl.textContent = msg.text;
+            }
+        }
+
+        // Show first message immediately
+        renderTicker(current);
+
+        // Rotate every 4 seconds with a fade transition
+        setInterval(function () {
+            card.style.opacity = '0';
+            setTimeout(function () {
+                current = (current + 1) % tickerMessages.length;
+                renderTicker(current);
+                card.style.opacity = '1';
+            }, 500);
+        }, 4000);
+    }());
     </script>
 </body>
 
