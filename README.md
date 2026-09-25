@@ -31,6 +31,7 @@ A single-page informational site covering events, news & how to get in touch.
 │   │   └── azure-static-web-apps-yellow-bay-013bff303.yml  # Azure deployment workflow
 │   └── PULL_REQUEST_TEMPLATE.md  # PR description template
 ├── index.html                    # The single page — all content lives here
+├── announcements.json            # Announcement cards data — edit this to update the announcements section
 ├── /assets/css                   # Tailwind stylesheets
 ├── /assets/images                # Images
 ├── /assets/logo                  # Logos
@@ -69,6 +70,39 @@ cd website
 # Open index.html in a browser or use a local server, e.g.:
 npx serve .
 ```
+
+## Announcements
+
+The **Announcements** section (displayed below the hero banner) is driven entirely by [`announcements.json`](./announcements.json) in the repo root — no code changes are needed to add, edit, or remove announcements.
+
+### Format
+
+```json
+[
+  {
+    "text": "Your announcement text here",
+    "icon": "🔔",
+    "url": "https://link-to-more-info"
+  }
+]
+```
+
+| Field | Required | Notes |
+|---|---|---|
+| `text` | ✅ Yes | The announcement message displayed on the card |
+| `icon` | No | Any single emoji — shown to the left of the text |
+| `url` | No | If provided, a "Find out more →" link is added to the card (opens in a new tab) |
+
+### How to add or remove an announcement
+
+1. Edit [`announcements.json`](./announcements.json) directly in GitHub (or via a branch/PR).
+2. Add a new JSON object to the array for a new announcement, or delete an object to remove one.
+3. There is no limit on the number of announcements — cards wrap into a responsive grid (1 col → 2 col → 3 col).
+4. To hide the section entirely, return an empty array `[]`.
+
+> The announcements section uses **Google Sans** font and matches the IBM carbon design language of the rest of the site.
+
+---
 
 ## Contact form
 

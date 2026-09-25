@@ -302,9 +302,44 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- ANNOUNCEMENTS CARD GRID -->
+                <section id="ticker-section" class="border-b border-gray-200 bg-blue-300 mb-5"
+                    style="font-family:'Google Sans',system-ui,sans-serif;" aria-label="Announcements">
+
+                    <div class="mx-auto max-w-6xl px-6 lg:px-8" style="padding-top:1.25rem;padding-bottom:1.25rem;">
+                
+                        <!-- Header row: "Latest" label + dismiss -->
+                        <div class="flex items-center justify-between" style="margin-bottom:0.875rem;">
+                            <div class="flex items-center gap-3">
+                                <span class="rounded bg-ibm-blue text-lg font-semibold text-white"
+                                    style="padding:0.2rem 0.6rem;">Latest</span>
+                                <span class="text-4xl font-semibold text-ibm-blue tracking-wide">Announcements</span>
+                            </div>
+                            <button id="ticker-dismiss"
+                                class="rounded text-ibm-carbon-light focus-visible:ring-2 focus-visible:ring-ibm-blue focus-visible:ring-offset-2"
+                                style="display:inline-flex;align-items:center;gap:0.3rem;padding:0.25rem 0.6rem;background:transparent;border:1px solid #d1d5db;cursor:pointer;font-size:0.75rem;transition:background 0.15s,color 0.15s;"
+                                aria-label="Hide announcements" title="Hide announcements">
+                                <svg width="10" height="10" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                                    <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                                Hide
+                            </button>
+                        </div>
+                
+                        <!-- Card grid — populated by JS -->
+                        <div id="ticker-cards-grid" class="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" aria-live="polite">
+                            <!-- Cards injected here by initTicker() -->
+                        </div>
+                
+                    </div>
+                </section>
+                <!-- END ANNOUNCEMENTS CARD GRID -->
+
             </div>
         </section>
         <!-- END HERO SECTION -->
+
 
         <section class="bg-white px-4 py-10">
             <div class="columns-1 gap-4 space-y-4 sm:columns-2 md:columns-3 lg:columns-4">
@@ -2106,6 +2141,99 @@
                     submitButton.textContent = "Send message";
                 });
         });
+
+    /* =================================================================
+       ANNOUNCEMENTS — messages loaded from announcements.json (root)
+       To add/edit/remove announcements, edit that file only.
+       JSON format: [{ "text": "...", "icon": "emoji", "url": "https://..." }]
+       icon and url are both optional.
+    ================================================================= */
+    (function initTicker() {
+        const section = document.getElementById('ticker-section');
+        const grid    = document.getElementById('ticker-cards-grid');
+        const dismiss = document.getElementById('ticker-dismiss');
+        if (!section || !grid) return;
+
+        // Build one card element per announcement
+        function buildCard(msg) {
+            const card = document.createElement('div');
+            card.style.cssText = 'background:#ffffff;border:1px solid #c7d7fe;border-left:4px solid #0f62fe;border-radius:0.5rem;padding:1rem 1rem 1rem 0.875rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 8px 0 rgba(15,98,254,0.10);transition:box-shadow 0.2s,transform 0.2s;';
+
+            // Top row: icon + text
+            const top = document.createElement('div');
+            top.style.cssText = 'display:flex;align-items:flex-start;gap:0.625rem;';
+
+            if (msg.icon) {
+                const icon = document.createElement('span');
+                icon.textContent = msg.icon;
+                icon.setAttribute('aria-hidden', 'true');
+                icon.style.cssText = 'font-size:1.375rem;line-height:1;flex-shrink:0;margin-top:0.1rem;';
+                top.appendChild(icon);
+            }
+
+            const body = document.createElement('div');
+            body.style.cssText = 'flex:1;min-width:0;';
+
+            const text = document.createElement('p');
+            text.style.cssText = 'font-size:0.9rem;font-weight:500;color:#393939;line-height:1.4;margin:0;';
+            text.textContent = msg.text;
+            body.appendChild(text);
+            top.appendChild(body);
+            card.appendChild(top);
+
+            // CTA link at bottom if url present
+            if (msg.url) {
+                const cta = document.createElement('a');
+                cta.href = msg.url;
+                cta.target = '_blank';
+                cta.rel = 'noopener noreferrer';
+                cta.textContent = 'Find out more →';
+                cta.style.cssText = 'display:inline-block;font-size:0.8rem;font-weight:600;color:#0f62fe;text-decoration:none;margin-top:0.25rem;';
+                cta.addEventListener('mouseenter', function () { cta.style.textDecorationLine = 'underline'; });
+                cta.addEventListener('mouseleave', function () { cta.style.textDecorationLine = 'none'; });
+                card.appendChild(cta);
+            }
+
+            // Hover lift
+            card.addEventListener('mouseenter', function () {
+                card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)';
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('mouseleave', function () {
+                card.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.05)';
+                card.style.transform = 'translateY(0)';
+            });
+
+            return card;
+        }
+
+        function boot(msgs) {
+            if (msgs.length === 0) { section.style.display = 'none'; return; }
+
+            msgs.forEach(function (msg) { grid.appendChild(buildCard(msg)); });
+
+            // Dismiss
+            if (dismiss) {
+                dismiss.addEventListener('click', function () {
+                    section.style.display = 'none';
+                });
+                dismiss.addEventListener('mouseenter', function () {
+                    dismiss.style.background = '#f3f4f6';
+                    dismiss.style.color = '#393939';
+                });
+                dismiss.addEventListener('mouseleave', function () {
+                    dismiss.style.background = 'transparent';
+                    dismiss.style.color = '';
+                });
+            }
+        }
+
+        // Fetch from JSON; hide section gracefully on any error
+        fetch('announcements.json')
+            .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+            .then(function (data) { boot(Array.isArray(data) ? data : []); })
+            .catch(function () { section.style.display = 'none'; });
+    }());
     </script>
 </body>
 
