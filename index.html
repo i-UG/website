@@ -2139,7 +2139,7 @@
         });
 
     /* =================================================================
-       ANNOUNCEMENTS — messages loaded from assets/announcements.json
+       ANNOUNCEMENTS — messages loaded from announcements.json (root)
        To add/edit/remove announcements, edit that file only.
        JSON format: [{ "text": "...", "icon": "emoji", "url": "https://..." }]
        icon and url are both optional.
@@ -2225,7 +2225,7 @@
         }
 
         // Fetch from JSON; hide section gracefully on any error
-        fetch('assets/announcements.json')
+        fetch('announcements.json')
             .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
             .then(function (data) { boot(Array.isArray(data) ? data : []); })
             .catch(function () { section.style.display = 'none'; });
