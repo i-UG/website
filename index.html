@@ -1426,17 +1426,17 @@
                         <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">IMS</span>
                     </a>
 
-                    <!-- KFA -->
+                    <!-- KFA Connect -->
                     <a href="https://www.kfa.co.uk/" target="_blank" rel="noopener noreferrer"
                         class="group flex flex-col items-center justify-center rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition hover:scale-105 hover:shadow-xl"
-                        title="KFA">
+                        title="KFA Connect">
                         <picture>
                             <source srcset="assets/vendors/KFA.avif" type="image/avif">
                             <source srcset="assets/vendors/KFA.webp" type="image/webp">
-                            <img src="assets/vendors/KFA.jpg" alt="KFA logo" class="h-18 w-full"
+                            <img src="assets/vendors/KFA.webp" alt="KFA Connect logo" class="h-18 w-full"
                                 style="object-fit:contain" loading="lazy">
                         </picture>
-                        <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">KFA</span>
+                        <span class="mt-3 text-xs font-semibold text-ibm-carbon-light">KFA Connect</span>
                     </a>
 
                     <!-- Logicmate -->
@@ -1834,18 +1834,18 @@
     <script>
         // ── 1. STICKY HEADER ──────────────────────────────────────────
         // Grab references to the header element and the three hamburger lines.
-        const header = document.getElementById("site-header");
-        const toggleButton = document.getElementById("mobile-toggle");
-        const mobileMenu = document.getElementById("mobile-menu");
-        const line1 = document.getElementById("line-1");
-        const line2 = document.getElementById("line-2");
-        const line3 = document.getElementById("line-3");
+        const header = document.getElementById("site-header")
+        const toggleButton = document.getElementById("mobile-toggle")
+        const mobileMenu = document.getElementById("mobile-menu")
+        const line1 = document.getElementById("line-1")
+        const line2 = document.getElementById("line-2")
+        const line3 = document.getElementById("line-3")
 
         // Select all mobile nav links so we can close the menu when one is tapped.
-        const mobileLinks = document.querySelectorAll(".mobile-link");
+        const mobileLinks = document.querySelectorAll(".mobile-link")
 
         // Track whether the mobile menu is currently open or closed.
-        let menuOpen = false;
+        let menuOpen = false
 
         /**
          * applyHeaderState — called on every scroll event.
@@ -1855,11 +1855,11 @@
          */
         function applyHeaderState() {
             if (window.scrollY > 8) {
-                header.classList.add("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur");
-                header.classList.remove("border-transparent", "bg-white/0");
+                header.classList.add("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur")
+                header.classList.remove("border-transparent", "bg-white/0")
             } else {
-                header.classList.add("border-transparent", "bg-white/0");
-                header.classList.remove("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur");
+                header.classList.add("border-transparent", "bg-white/0")
+                header.classList.remove("border-gray-200", "bg-white/90", "shadow-sm", "backdrop-blur")
             }
         }
 
@@ -1875,77 +1875,77 @@
          *   - The ✕ animates back to three horizontal lines.
          */
         function setMenuState(open) {
-            menuOpen = open;
+            menuOpen = open
             // Update the aria-expanded attribute for accessibility (screen readers).
-            toggleButton.setAttribute("aria-expanded", String(open));
+            toggleButton.setAttribute("aria-expanded", String(open))
 
             if (open) {
                 // Slide the menu panel down.
-                mobileMenu.classList.add("max-h-80", "border-t");
-                mobileMenu.classList.remove("max-h-0", "border-t-0");
+                mobileMenu.classList.add("max-h-80", "border-t")
+                mobileMenu.classList.remove("max-h-0", "border-t-0")
                 // Animate line 1: rotate it 45° downward to form the top of the ✕.
-                line1.classList.add("translate-y-[7px]", "rotate-45");
+                line1.classList.add("translate-y-[7px]", "rotate-45")
                 // Hide the middle line.
-                line2.classList.add("opacity-0");
-                line2.classList.remove("opacity-100");
+                line2.classList.add("opacity-0")
+                line2.classList.remove("opacity-100")
                 // Animate line 3: rotate it -45° upward to form the bottom of the ✕.
-                line3.classList.add("-translate-y-[7px]", "-rotate-45");
+                line3.classList.add("-translate-y-[7px]", "-rotate-45")
             } else {
                 // Collapse the menu panel.
-                mobileMenu.classList.add("max-h-0", "border-t-0");
-                mobileMenu.classList.remove("max-h-80", "border-t");
+                mobileMenu.classList.add("max-h-0", "border-t-0")
+                mobileMenu.classList.remove("max-h-80", "border-t")
                 // Reset all three lines back to horizontal.
-                line1.classList.remove("translate-y-[7px]", "rotate-45");
-                line2.classList.remove("opacity-0");
-                line2.classList.add("opacity-100");
-                line3.classList.remove("-translate-y-[7px]", "-rotate-45");
+                line1.classList.remove("translate-y-[7px]", "rotate-45")
+                line2.classList.remove("opacity-0")
+                line2.classList.add("opacity-100")
+                line3.classList.remove("-translate-y-[7px]", "-rotate-45")
             }
         }
 
         // Apply the correct header style immediately on page load,
         // and update it whenever the user scrolls.
-        window.addEventListener("scroll", applyHeaderState, { passive: true });
-        applyHeaderState();
+        window.addEventListener("scroll", applyHeaderState, { passive: true })
+        applyHeaderState()
 
         // Start with the mobile menu closed.
-        setMenuState(false);
+        setMenuState(false)
 
         // Toggle the menu open/closed when the hamburger button is clicked.
-        toggleButton.addEventListener("click", () => setMenuState(!menuOpen));
+        toggleButton.addEventListener("click", () => setMenuState(!menuOpen))
 
         // Close the mobile menu whenever any mobile nav link is clicked
         // (the page will scroll to the section and the menu should tidy away).
         mobileLinks.forEach((link) => {
-            link.addEventListener("click", () => setMenuState(false));
-        });
+            link.addEventListener("click", () => setMenuState(false))
+        })
 
         // ── 2. MAILING LIST FORM ──────────────────────────────────────
-        const mlForm = document.getElementById("ml-form");
-        const mlStatus = document.getElementById("ml-status");
-        const mlErrorName = document.getElementById("ml-error-name");
-        const mlErrorEmail = document.getElementById("ml-error-email");
-        const mlSubmit = document.getElementById("ml-submit");
+        const mlForm = document.getElementById("ml-form")
+        const mlStatus = document.getElementById("ml-status")
+        const mlErrorName = document.getElementById("ml-error-name")
+        const mlErrorEmail = document.getElementById("ml-error-email")
+        const mlSubmit = document.getElementById("ml-submit")
 
         mlForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault()
 
-            const name = document.getElementById("ml-name").value.trim();
-            const email = document.getElementById("ml-email").value.trim();
+            const name = document.getElementById("ml-name").value.trim()
+            const email = document.getElementById("ml-email").value.trim()
 
-            const nameError = name ? "" : "Please enter your name.";
-            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
+            const nameError = name ? "" : "Please enter your name."
+            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email."
 
             // validEmail is defined in section 3 below — both handlers share it.
-            showFieldError(mlErrorName, nameError);
-            showFieldError(mlErrorEmail, emailError);
+            showFieldError(mlErrorName, nameError)
+            showFieldError(mlErrorEmail, emailError)
 
             if (nameError || emailError) {
-                mlStatus.classList.add("hidden");
-                return;
+                mlStatus.classList.add("hidden")
+                return
             }
 
-            mlSubmit.disabled = true;
-            mlSubmit.textContent = "Signing up...";
+            mlSubmit.disabled = true
+            mlSubmit.textContent = "Signing up..."
 
             fetch("https://formspree.io/f/mvkopbno", {
                 method: "POST",
@@ -1954,60 +1954,60 @@
             })
                 .then(function (response) {
                     if (response.ok) {
-                        mlForm.reset();
-                        mlStatus.textContent = "Thank you — you have been added to the mailing list.";
-                        mlStatus.className = "text-sm font-medium text-ibm-blue";
-                        mlStatus.classList.remove("hidden");
+                        mlForm.reset()
+                        mlStatus.textContent = "Thank you — you have been added to the mailing list."
+                        mlStatus.className = "text-sm font-medium text-ibm-blue"
+                        mlStatus.classList.remove("hidden")
                     } else {
                         return response.json().then(function (data) {
-                            var msg = (data.errors && data.errors.map(function (e) { return e.message; }).join(", "))
-                                || "Sorry, there was a problem signing you up. Please try again.";
-                            mlStatus.textContent = msg;
-                            mlStatus.className = "text-sm font-medium text-red-600";
-                            mlStatus.classList.remove("hidden");
-                        });
+                            var msg = (data.errors && data.errors.map(function (e) { return e.message }).join(", "))
+                                || "Sorry, there was a problem signing you up. Please try again."
+                            mlStatus.textContent = msg
+                            mlStatus.className = "text-sm font-medium text-red-600"
+                            mlStatus.classList.remove("hidden")
+                        })
                     }
                 })
                 .catch(function () {
-                    mlStatus.textContent = "Sorry, there was a network error. Please try again.";
-                    mlStatus.className = "text-sm font-medium text-red-600";
-                    mlStatus.classList.remove("hidden");
+                    mlStatus.textContent = "Sorry, there was a network error. Please try again."
+                    mlStatus.className = "text-sm font-medium text-red-600"
+                    mlStatus.classList.remove("hidden")
                 })
                 .finally(function () {
-                    mlSubmit.disabled = false;
-                    mlSubmit.textContent = "Sign me up";
-                });
-        });
+                    mlSubmit.disabled = false
+                    mlSubmit.textContent = "Sign me up"
+                })
+        })
 
         // ── 3. MEMBERSHIP FORM ────────────────────────────────────────
-        const memForm = document.getElementById("membership-form");
-        const memStatus = document.getElementById("mem-status");
-        const memSubmit = document.getElementById("mem-submit");
+        const memForm = document.getElementById("membership-form")
+        const memStatus = document.getElementById("mem-status")
+        const memSubmit = document.getElementById("mem-submit")
 
         memForm.addEventListener("submit", function (event) {
-            event.preventDefault();
+            event.preventDefault()
 
-            const firstName = document.getElementById("mem-firstname").value.trim();
-            const lastName = document.getElementById("mem-lastname").value.trim();
-            const email = document.getElementById("mem-email").value.trim();
-            const memType = document.getElementById("mem-type").value;
+            const firstName = document.getElementById("mem-firstname").value.trim()
+            const lastName = document.getElementById("mem-lastname").value.trim()
+            const email = document.getElementById("mem-email").value.trim()
+            const memType = document.getElementById("mem-type").value
 
             if (!firstName || !lastName || !email || !memType) {
-                memStatus.textContent = "Please fill in all required fields.";
-                memStatus.className = "text-sm font-medium text-red-600";
-                memStatus.classList.remove("hidden");
-                return;
+                memStatus.textContent = "Please fill in all required fields."
+                memStatus.className = "text-sm font-medium text-red-600"
+                memStatus.classList.remove("hidden")
+                return
             }
             if (!validEmail(email)) {
-                memStatus.textContent = "Please enter a valid email address.";
-                memStatus.className = "text-sm font-medium text-red-600";
-                memStatus.classList.remove("hidden");
-                return;
+                memStatus.textContent = "Please enter a valid email address."
+                memStatus.className = "text-sm font-medium text-red-600"
+                memStatus.classList.remove("hidden")
+                return
             }
 
-            memSubmit.disabled = true;
-            memSubmit.textContent = "Submitting...";
-            memStatus.classList.add("hidden");
+            memSubmit.disabled = true
+            memSubmit.textContent = "Submitting..."
+            memStatus.classList.add("hidden")
 
             fetch("https://formspree.io/f/mvkopbno", {
                 method: "POST",
@@ -2016,39 +2016,39 @@
             })
                 .then(function (response) {
                     if (response.ok) {
-                        memForm.reset();
-                        memStatus.textContent = "Thank you — your application has been received. We will be in touch shortly.";
-                        memStatus.className = "text-sm font-medium text-ibm-blue";
-                        memStatus.classList.remove("hidden");
+                        memForm.reset()
+                        memStatus.textContent = "Thank you — your application has been received. We will be in touch shortly."
+                        memStatus.className = "text-sm font-medium text-ibm-blue"
+                        memStatus.classList.remove("hidden")
                     } else {
                         return response.json().then(function (data) {
-                            var msg = (data.errors && data.errors.map(function (e) { return e.message; }).join(", "))
-                                || "Sorry, there was a problem submitting your application. Please try again.";
-                            memStatus.textContent = msg;
-                            memStatus.className = "text-sm font-medium text-red-600";
-                            memStatus.classList.remove("hidden");
-                        });
+                            var msg = (data.errors && data.errors.map(function (e) { return e.message }).join(", "))
+                                || "Sorry, there was a problem submitting your application. Please try again."
+                            memStatus.textContent = msg
+                            memStatus.className = "text-sm font-medium text-red-600"
+                            memStatus.classList.remove("hidden")
+                        })
                     }
                 })
                 .catch(function () {
-                    memStatus.textContent = "Sorry, there was a network error. Please try again.";
-                    memStatus.className = "text-sm font-medium text-red-600";
-                    memStatus.classList.remove("hidden");
+                    memStatus.textContent = "Sorry, there was a network error. Please try again."
+                    memStatus.className = "text-sm font-medium text-red-600"
+                    memStatus.classList.remove("hidden")
                 })
                 .finally(function () {
-                    memSubmit.disabled = false;
-                    memSubmit.textContent = "Submit application";
-                });
-        });
+                    memSubmit.disabled = false
+                    memSubmit.textContent = "Submit application"
+                })
+        })
 
         // ── 4. CONTACT FORM VALIDATION ────────────────────────────────
         // Grab references to the contact form and its fields.
-        const contactForm = document.getElementById("contact-form");
-        const contactStatus = document.getElementById("contact-status");
-        const errorName = document.getElementById("error-name");
-        const errorEmail = document.getElementById("error-email");
-        const errorMessage = document.getElementById("error-message");
-        const submitButton = document.getElementById("contact-submit");
+        const contactForm = document.getElementById("contact-form")
+        const contactStatus = document.getElementById("contact-status")
+        const errorName = document.getElementById("error-name")
+        const errorEmail = document.getElementById("error-email")
+        const errorMessage = document.getElementById("error-message")
+        const submitButton = document.getElementById("contact-submit")
 
         /**
          * showFieldError — shows or hides an inline error message under a field.
@@ -2058,13 +2058,13 @@
         function showFieldError(element, message) {
             if (!message) {
                 // Empty message means no error — hide the element.
-                element.classList.add("hidden");
-                element.textContent = "";
-                return;
+                element.classList.add("hidden")
+                element.textContent = ""
+                return
             }
             // Show the error text.
-            element.textContent = message;
-            element.classList.remove("hidden");
+            element.textContent = message
+            element.classList.remove("hidden")
         }
 
         /**
@@ -2074,38 +2074,38 @@
          * @returns {boolean}
          */
         function validEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
         }
 
         // Handle contact form submission.
         contactForm.addEventListener("submit", function (event) {
             // Prevent the default browser form submission (which would reload the page).
-            event.preventDefault();
+            event.preventDefault()
 
             // Read the current value of each field, trimming extra whitespace.
-            const name = document.getElementById("contact-name").value.trim();
-            const email = document.getElementById("contact-email").value.trim();
-            const message = document.getElementById("contact-message").value.trim();
+            const name = document.getElementById("contact-name").value.trim()
+            const email = document.getElementById("contact-email").value.trim()
+            const message = document.getElementById("contact-message").value.trim()
 
             // Build error strings for each field ("" means no error).
-            const nameError = name ? "" : "Please enter your name.";
-            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email.";
-            const messageError = message.length >= 10 ? "" : "Please enter at least 10 characters.";
+            const nameError = name ? "" : "Please enter your name."
+            const emailError = email ? (validEmail(email) ? "" : "Please enter a valid email address.") : "Please enter your email."
+            const messageError = message.length >= 10 ? "" : "Please enter at least 10 characters."
 
             // Display or clear each inline error.
-            showFieldError(errorName, nameError);
-            showFieldError(errorEmail, emailError);
-            showFieldError(errorMessage, messageError);
+            showFieldError(errorName, nameError)
+            showFieldError(errorEmail, emailError)
+            showFieldError(errorMessage, messageError)
 
             // If any field has an error, stop here and do not submit.
             if (nameError || emailError || messageError) {
-                contactStatus.classList.add("hidden");
-                return;
+                contactStatus.classList.add("hidden")
+                return
             }
 
             // All fields are valid — disable the button and show a sending state.
-            submitButton.disabled = true;
-            submitButton.textContent = "Sending...";
+            submitButton.disabled = true
+            submitButton.textContent = "Sending..."
 
             // POST the form data to Formspree as JSON.
             fetch("https://formspree.io/f/mvkopbno", {
@@ -2116,31 +2116,31 @@
                 .then(function (response) {
                     if (response.ok) {
                         // Success — reset the form and show a confirmation message.
-                        contactForm.reset();
-                        contactStatus.textContent = "Thank you — your message has been received.";
-                        contactStatus.className = "text-sm font-medium text-ibm-blue";
-                        contactStatus.classList.remove("hidden");
+                        contactForm.reset()
+                        contactStatus.textContent = "Thank you — your message has been received."
+                        contactStatus.className = "text-sm font-medium text-ibm-blue"
+                        contactStatus.classList.remove("hidden")
                     } else {
                         // Formspree returned an error (e.g. endpoint misconfigured).
                         return response.json().then(function (data) {
-                            var msg = (data.errors && data.errors.map(function (e) { return e.message; }).join(", "))
-                                || "Sorry, there was a problem sending your message. Please try again.";
-                            contactStatus.textContent = msg;
-                            contactStatus.className = "text-sm font-medium text-red-600";
-                            contactStatus.classList.remove("hidden");
-                        });
+                            var msg = (data.errors && data.errors.map(function (e) { return e.message }).join(", "))
+                                || "Sorry, there was a problem sending your message. Please try again."
+                            contactStatus.textContent = msg
+                            contactStatus.className = "text-sm font-medium text-red-600"
+                            contactStatus.classList.remove("hidden")
+                        })
                     }
                 })
                 .catch(function () {
                     // Network failure.
-                    contactStatus.textContent = "Sorry, there was a network error. Please try again.";
-                    contactStatus.className = "text-sm font-medium text-red-600";
-                    contactStatus.classList.remove("hidden");
+                    contactStatus.textContent = "Sorry, there was a network error. Please try again."
+                    contactStatus.className = "text-sm font-medium text-red-600"
+                    contactStatus.classList.remove("hidden")
                 })
                 .finally(function () {
-                    submitButton.disabled = false;
-                    submitButton.textContent = "Send message";
-                });
+                    submitButton.disabled = false
+                    submitButton.textContent = "Send message"
+                })
         });
 
         /* =================================================================
@@ -2150,90 +2150,90 @@
            icon and url are both optional.
         ================================================================= */
         (function initTicker() {
-            const section = document.getElementById('ticker-section');
-            const grid = document.getElementById('ticker-cards-grid');
-            const dismiss = document.getElementById('ticker-dismiss');
-            if (!section || !grid) return;
+            const section = document.getElementById('ticker-section')
+            const grid = document.getElementById('ticker-cards-grid')
+            const dismiss = document.getElementById('ticker-dismiss')
+            if (!section || !grid) return
 
             // Build one card element per announcement
             function buildCard(msg) {
-                const card = document.createElement('div');
-                card.style.cssText = 'background:#ffffff;border:1px solid #c7d7fe;border-left:4px solid #0f62fe;border-radius:0.5rem;padding:1rem 1rem 1rem 0.875rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 8px 0 rgba(15,98,254,0.10);transition:box-shadow 0.2s,transform 0.2s;';
+                const card = document.createElement('div')
+                card.style.cssText = 'background:#ffffff;border:1px solid #c7d7fe;border-left:4px solid #0f62fe;border-radius:0.5rem;padding:1rem 1rem 1rem 0.875rem;display:flex;flex-direction:column;gap:0.5rem;box-shadow:0 2px 8px 0 rgba(15,98,254,0.10);transition:box-shadow 0.2s,transform 0.2s;'
 
                 // Top row: icon + text
-                const top = document.createElement('div');
-                top.style.cssText = 'display:flex;align-items:flex-start;gap:0.625rem;';
+                const top = document.createElement('div')
+                top.style.cssText = 'display:flex;align-items:flex-start;gap:0.625rem;'
 
                 if (msg.icon) {
-                    const icon = document.createElement('span');
-                    icon.textContent = msg.icon;
-                    icon.setAttribute('aria-hidden', 'true');
-                    icon.style.cssText = 'font-size:1.375rem;line-height:1;flex-shrink:0;margin-top:0.1rem;';
-                    top.appendChild(icon);
+                    const icon = document.createElement('span')
+                    icon.textContent = msg.icon
+                    icon.setAttribute('aria-hidden', 'true')
+                    icon.style.cssText = 'font-size:1.375rem;line-height:1;flex-shrink:0;margin-top:0.1rem;'
+                    top.appendChild(icon)
                 }
 
-                const body = document.createElement('div');
-                body.style.cssText = 'flex:1;min-width:0;';
+                const body = document.createElement('div')
+                body.style.cssText = 'flex:1;min-width:0;'
 
-                const text = document.createElement('p');
-                text.style.cssText = 'font-size:0.9rem;font-weight:500;color:#393939;line-height:1.4;margin:0;';
-                text.textContent = msg.text;
-                body.appendChild(text);
-                top.appendChild(body);
-                card.appendChild(top);
+                const text = document.createElement('p')
+                text.style.cssText = 'font-size:0.9rem;font-weight:500;color:#393939;line-height:1.4;margin:0;'
+                text.textContent = msg.text
+                body.appendChild(text)
+                top.appendChild(body)
+                card.appendChild(top)
 
                 // CTA link at bottom if url present
                 if (msg.url) {
-                    const cta = document.createElement('a');
-                    cta.href = msg.url;
-                    cta.target = '_blank';
-                    cta.rel = 'noopener noreferrer';
-                    cta.textContent = 'Find out more →';
-                    cta.style.cssText = 'display:inline-block;font-size:0.8rem;font-weight:600;color:#0f62fe;text-decoration:none;margin-top:0.25rem;';
-                    cta.addEventListener('mouseenter', function () { cta.style.textDecorationLine = 'underline'; });
-                    cta.addEventListener('mouseleave', function () { cta.style.textDecorationLine = 'none'; });
-                    card.appendChild(cta);
+                    const cta = document.createElement('a')
+                    cta.href = msg.url
+                    cta.target = '_blank'
+                    cta.rel = 'noopener noreferrer'
+                    cta.textContent = 'Find out more →'
+                    cta.style.cssText = 'display:inline-block;font-size:0.8rem;font-weight:600;color:#0f62fe;text-decoration:none;margin-top:0.25rem;'
+                    cta.addEventListener('mouseenter', function () { cta.style.textDecorationLine = 'underline' })
+                    cta.addEventListener('mouseleave', function () { cta.style.textDecorationLine = 'none' })
+                    card.appendChild(cta)
                 }
 
                 // Hover lift
                 card.addEventListener('mouseenter', function () {
-                    card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)';
-                    card.style.transform = 'translateY(-2px)';
-                });
+                    card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -2px rgba(0,0,0,.1)'
+                    card.style.transform = 'translateY(-2px)'
+                })
                 card.addEventListener('mouseleave', function () {
-                    card.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.05)';
-                    card.style.transform = 'translateY(0)';
-                });
+                    card.style.boxShadow = '0 1px 2px 0 rgba(0,0,0,.05)'
+                    card.style.transform = 'translateY(0)'
+                })
 
-                return card;
+                return card
             }
 
             function boot(msgs) {
-                if (msgs.length === 0) { section.style.display = 'none'; return; }
+                if (msgs.length === 0) { section.style.display = 'none'; return }
 
-                msgs.forEach(function (msg) { grid.appendChild(buildCard(msg)); });
+                msgs.forEach(function (msg) { grid.appendChild(buildCard(msg)) })
 
                 // Dismiss
                 if (dismiss) {
                     dismiss.addEventListener('click', function () {
-                        section.style.display = 'none';
-                    });
+                        section.style.display = 'none'
+                    })
                     dismiss.addEventListener('mouseenter', function () {
-                        dismiss.style.background = '#f3f4f6';
-                        dismiss.style.color = '#393939';
-                    });
+                        dismiss.style.background = '#f3f4f6'
+                        dismiss.style.color = '#393939'
+                    })
                     dismiss.addEventListener('mouseleave', function () {
-                        dismiss.style.background = 'transparent';
-                        dismiss.style.color = '';
-                    });
+                        dismiss.style.background = 'transparent'
+                        dismiss.style.color = ''
+                    })
                 }
             }
 
             // Fetch from JSON; hide section gracefully on any error
             fetch('announcements.json')
-                .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-                .then(function (data) { boot(Array.isArray(data) ? data : []); })
-                .catch(function () { section.style.display = 'none'; });
+                .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status) })
+                .then(function (data) { boot(Array.isArray(data) ? data : []) })
+                .catch(function () { section.style.display = 'none' })
         }());
     </script>
 </body>
