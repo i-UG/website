@@ -11,9 +11,11 @@ A single-page informational site covering events, news & how to get in touch.
 
 - **Static, one-page site** — no database, no server-side code, no CMS
 - **Tailwind CSS** for all styling
-- **Hosted on Azure Static Web Apps** (Free tier)
+- **Hosted on Azure** by FormaServe Systems Ltd
 - **Deployed automatically via GitHub Actions** whenever changes are merged into `main`
-- **Contact form** powered by [Formspree](https://formspree.io) (free tier) — submissions are emailed directly to the configured inbox with no backend required.  Currently, the email addresses Andy.Youens@i-ug.co.uk & saroj.bains@i-ug.co.uk are the recipients. If this needs to change, a issue needs to be raised on gitHub.
+- **Contact forms** powered by [Formspree](https://formspree.io) (free tier) — submissions are emailed directly to the configured inbox with no backend required.  Currently, the email addresses <Andy.Youens@i-ug.co.uk> & <saroj.bains@i-ug.co.uk> are the recipients. If this needs to change, an issue needs to be raised on gitHub.
+
+> This website runs on Azure. The platform is kindly provided by FormaServe Systems Ltd (<https://www.formaserve.co.uk>).
 
 > ⚠️ **Please don't deviate from this technical foundation.** No additional pages, no alternative CSS frameworks (Bootstrap, custom stylesheets, etc.), no CMS or page builders. Any proposed change to this foundation should go through the Development Director first, separately from routine content edits.
 
@@ -35,11 +37,12 @@ A single-page informational site covering events, news & how to get in touch.
 ├── /assets/css                   # Tailwind stylesheets
 ├── /assets/images                # Images
 ├── /assets/logo                  # Logos
-├── website_update_guide.pdf      # Images
+├── /assets/vendors               # Vendors Logos
+├── website_update_guide.pdf      # Site update guide
 └── README.md                     # this bumph
 ```
 
-## How changes get published....
+## How changes get published
 
 Changes will only be made that have a GitHub issue raised [here](https://github.com/i-UG/website/issues).  **NO other changes will be considered or worked on.**
 
@@ -88,7 +91,7 @@ The **Announcements** section (displayed below the hero banner) is driven entire
 ```
 
 | Field | Required | Notes |
-|---|---|---|
+| --- | --- | --- |
 | `text` | ✅ Yes | The announcement message displayed on the card |
 | `icon` | No | Any single emoji — shown to the left of the text |
 | `url` | No | If provided, a "Find out more →" link is added to the card (opens in a new tab) |
@@ -109,7 +112,7 @@ The **Announcements** section (displayed below the hero banner) is driven entire
 The **Contact Us** form on the page submits to [Formspree](https://formspree.io) via a `fetch()` POST. No server-side code is involved.
 
 | Detail | Value |
-|---|---|
+| --- | --- |
 | Formspree endpoint | `https://formspree.io/f/mvkopbno` |
 | Fields submitted | `name`, `email`, `message` |
 | Success / error handling | Handled in the `contactForm` submit listener in `index.html` |
